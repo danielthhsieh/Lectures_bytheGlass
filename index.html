@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>學術酒吧 Lecture by the Glass</title>
+<meta name="description" content="把專家請進酒吧，把問題留給你。每場邀請一位領域專家、只開 35 席，配上與主題呼應的酒。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="學術酒吧 Lecture by the Glass">
+<meta property="og:description" content="把專家請進酒吧，把問題留給你。12/12《金瓶梅》、12/19 成人 ADHD，兩個週六，各只開 35 席。">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=Oswald:wght@500;600&display=swap">
+<style>
+/* Layout: one dark bar at night. A single column of "rounds" (sections) under a pill nav, each opening with its question; the four pillar colours appear only where a pillar is named. */
+:root {
+  color-scheme: dark;
+  --bg: #0e0c0a; --bg-raised: #1b1815; --line: #3a352e; --line-strong: #8a7f6e;
+  --ink: #f3ece0; --ink-muted: #a99e8d; --cream: #f8f1e4;
+  --neon: #f0db8f; --on-neon: #14110e; --neon-soft: #33290f; --glow: rgba(184,137,42,.55);
+  --psyche: #ff8a5c; --psyche-fill: #b8401a; --canon: #ff6b78; --canon-fill: #b3122e;
+  --senses: #a5d672; --senses-fill: #3f6a26; --city: #97a3ff; --city-fill: #2a35c9;
+  --display: "Oswald", "Noto Sans TC", "Arial Narrow", sans-serif;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --max: 1120px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.band { padding-block: 96px; }
+@media (max-width: 720px) { .band { padding-block: 64px; } }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--display); font-weight: 500; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--neon); }
+.muted { color: var(--ink-muted); }
+.h2 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.3; margin-top: 14px; }
+.lede { font-size: 18px; line-height: 1.85; color: var(--ink-muted); max-width: 40em; margin-top: 18px; }
+.sec-head { margin-bottom: 48px; }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; padding: 14px var(--gutter-r) 0 var(--gutter-l); display: flex; justify-content: center; pointer-events: none; }
+.nav-inner { pointer-events: auto; display: flex; align-items: center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 6px; border: 1px solid var(--line); border-radius: 999px; background: rgba(14,12,10,.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav a { flex: none; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 7px 14px; border-radius: 999px; color: var(--ink-muted); transition: color 150ms ease-out, background-color 150ms ease-out; }
+.nav a:hover { color: var(--ink); }
+.nav a.brand { color: var(--ink); font-family: var(--display); letter-spacing: .14em; font-size: 13px; }
+.nav a.cur { color: var(--on-neon); background: var(--neon); }
+
+/* hero */
+.hero { position: relative; padding-block: 56px 88px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 48px; align-items: end; }
+.logo { display: block; width: min(420px, 100%); height: auto; mix-blend-mode: lighten; margin-left: -12px; }
+.logo.flicker { animation: flicker 2.4s steps(1) 1 both; }
+@keyframes flicker { 0%{opacity:.15} 6%{opacity:1} 9%{opacity:.3} 12%{opacity:1} 30%{opacity:.85} 33%{opacity:1} 100%{opacity:1} }
+@media (prefers-reduced-motion: reduce) { .logo.flicker { animation: none; } html { scroll-behavior: auto; } }
+.hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(32px, 5vw, 56px); line-height: 1.28; margin-top: 40px; }
+.hero h1 em { font-style: normal; color: var(--neon); text-shadow: 0 0 24px var(--glow); }
+.hero .sub { font-size: 18px; color: var(--ink-muted); margin-top: 20px; max-width: 30em; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--sans); font-size: 15px; line-height: 20px; font-weight: 500; letter-spacing: .04em; padding: 13px 24px; border-radius: 2px; border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none; background: transparent; transition: background-color 150ms ease-out, filter 150ms ease-out, border-color 150ms ease-out; cursor: pointer; }
+.btn:hover { background: var(--bg-raised); }
+.btn.pri { background: var(--neon); border-color: var(--neon); color: var(--on-neon); font-weight: 700; box-shadow: 0 0 18px var(--glow); }
+.btn.pri:hover { filter: brightness(1.06); }
+.btn .arr { font-family: var(--display); }
+
+.next { background: var(--bg-raised); padding: 24px; display: grid; gap: 10px; }
+.next .k { font-family: var(--display); font-size: 12px; letter-spacing: .18em; color: var(--ink-muted); text-transform: uppercase; }
+.next .when { font-family: var(--display); font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: .02em; }
+.next .q { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+.next a { color: var(--neon); text-decoration: none; font-weight: 500; }
+.next a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.coasters { position: absolute; right: -60px; top: 40px; width: 360px; height: 360px; pointer-events: none; opacity: .9; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } .coasters { display: none; } }
+
+/* manifesto */
+.manifesto { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.mlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.mlist li { font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 2.8vw, 30px); line-height: 1.6; color: var(--ink-muted); transition: color 400ms ease-out, text-shadow 400ms ease-out; }
+.mlist li.lit { color: var(--ink); }
+.mlist li.answer { color: var(--neon); text-shadow: 0 0 24px var(--glow); margin-top: 18px; }
+
+/* about */
+.promises { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: var(--line); border: 1px solid var(--line); }
+.promise { background: var(--bg); padding: 32px 28px; display: grid; gap: 14px; align-content: start; }
+.promise .num { font-family: var(--display); font-weight: 600; font-size: 64px; line-height: 1; color: var(--neon); letter-spacing: .02em; }
+.promise .num small { font-size: 18px; letter-spacing: .1em; margin-left: 4px; color: var(--ink-muted); font-weight: 500; }
+.promise h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1.5; }
+.promise p { color: var(--ink-muted); font-size: 15px; }
+.notlist { display: flex; flex-wrap: wrap; gap: 10px 12px; margin-top: 28px; align-items: center; }
+.notlist .lbl { font-family: var(--display); font-size: 13px; letter-spacing: .16em; color: var(--ink-muted); margin-right: 6px; }
+.notlist span.x { font-size: 14px; color: var(--ink-muted); padding: 4px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: line-through; text-decoration-color: var(--canon); }
+@media (max-width: 860px) { .promises { grid-template-columns: minmax(0, 1fr); } }
+
+/* events */
+.events { display: grid; gap: 24px; }
+.ev { display: grid; grid-template-columns: 240px minmax(0, 1fr); background: var(--bg-raised); }
+.ev-poster { position: relative; padding: 20px; color: var(--cream); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
+.ev-poster .vol { font-family: var(--display); font-weight: 600; font-size: 64px; line-height: 1; letter-spacing: .02em; }
+.ev-poster .volk { font-family: var(--display); font-size: 12px; letter-spacing: .2em; }
+.ev-poster .theme { writing-mode: vertical-rl; align-self: flex-end; font-family: var(--serif); font-weight: 900; font-size: 34px; line-height: 1.1; letter-spacing: .06em; }
+.p-psyche { background: var(--psyche-fill); } .p-canon { background: var(--canon-fill); } .p-senses { background: var(--senses-fill); } .p-city { background: var(--city-fill); }
+.ev-body { padding: 28px 32px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; line-height: 20px; font-weight: 500; padding: 2px 12px; border-radius: 999px; border: 1px solid currentColor; color: var(--ink-muted); white-space: nowrap; }
+.tag.dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.t-psyche { color: var(--psyche); } .t-canon { color: var(--canon); } .t-senses { color: var(--senses); } .t-city { color: var(--city); }
+.tag.state { color: var(--neon); background: var(--neon-soft); border-color: transparent; }
+.ev-meta { font-family: var(--display); font-weight: 500; font-size: 14px; letter-spacing: .14em; color: var(--ink-muted); }
+.ev-q { font-family: var(--serif); font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.45; }
+.ev-spk { font-size: 15px; color: var(--ink-muted); }
+.ev-spk b { color: var(--ink); font-weight: 500; }
+.ev-hl { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
+.ev-hl li { display: grid; grid-template-columns: 18px minmax(0, 1fr); }
+.ev-hl li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--neon); margin-top: 9px; }
+.ev-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.ev-q a { text-decoration: none; }
+.ev-q a:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.ev-foot { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 18px; margin-top: 6px; }
+.price { font-size: 14px; color: var(--ink-muted); line-height: 1.6; }
+.price b { font-family: var(--display); font-weight: 600; font-size: 24px; color: var(--ink); letter-spacing: .03em; margin-right: 4px; }
+@media (max-width: 760px) { .ev { grid-template-columns: minmax(0, 1fr); } .ev-poster { min-height: 0; flex-direction: row; align-items: flex-end; gap: 16px; } .ev-poster .theme { writing-mode: horizontal-tb; font-size: 28px; align-self: auto; } .ev-body { padding: 24px 20px; } }
+
+/* pillars */
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.pillar { color: var(--cream); padding: 24px 22px 26px; display: grid; gap: 16px; align-content: start; min-height: 320px; }
+.pillar .pk { font-family: var(--display); font-size: 12px; letter-spacing: .2em; }
+.pillar h3 { font-family: var(--serif); font-weight: 900; font-size: 24px; line-height: 1.35; }
+.pillar ul { list-style: none; margin: auto 0 0; padding: 14px 0 0; border-top: 1px solid rgba(248,241,228,.35); display: grid; gap: 10px; }
+.pillar li { font-size: 14.5px; line-height: 1.6; }
+@media (max-width: 960px) { .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .pillars { grid-template-columns: minmax(0, 1fr); } .pillar { min-height: 0; } }
+
+/* timeline */
+.tl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--line); }
+.tl-step { position: relative; padding: 28px 24px 0 0; display: grid; gap: 10px; align-content: start; }
+.tl-step::before { content: ""; position: absolute; left: 0; top: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--neon); }
+.tl-step.peak::before { background: var(--neon); box-shadow: 0 0 16px var(--glow); }
+.tl-time { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: .03em; line-height: 1; }
+.tl-time small { font-size: 13px; letter-spacing: .14em; color: var(--ink-muted); margin-left: 6px; font-weight: 500; }
+.tl-step h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+.tl-step p { font-size: 15px; color: var(--ink-muted); }
+.tl-bar { display: flex; height: 6px; margin-top: 40px; }
+.tl-bar span { display: block; height: 100%; }
+.tl-cap { display: flex; justify-content: space-between; font-family: var(--display); font-size: 12px; letter-spacing: .16em; color: var(--ink-muted); margin-top: 10px; }
+@media (max-width: 860px) { .tl { grid-template-columns: minmax(0, 1fr); border-top: 0; border-left: 2px solid var(--line); gap: 28px; } .tl-step { padding: 0 0 0 28px; } .tl-step::before { left: -9px; top: 4px; } .tl-bar, .tl-cap { display: none; } }
+
+/* letter */
+.letter { text-align: left; max-width: 760px; margin: 0 auto; }
+.letter blockquote { margin: 0; font-family: var(--serif); font-weight: 700; font-size: clamp(22px, 3vw, 32px); line-height: 1.7; }
+.letter blockquote span { color: var(--neon); }
+.letter .sig { margin-top: 24px; font-size: 15px; color: var(--ink-muted); }
+
+/* past */
+.past { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.past-card { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; align-items: center; padding: 24px; background: var(--bg-raised); }
+.coaster { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; text-align: center; color: var(--cream); line-height: 1.1; }
+.coaster b { display: block; font-family: var(--display); font-weight: 600; font-size: 40px; }
+.coaster span { font-family: var(--display); font-size: 11px; letter-spacing: .18em; }
+.past-card h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1.5; }
+.past-card p { color: var(--ink-muted); font-size: 15px; }
+.stat { font-family: var(--display); font-weight: 600; color: var(--neon); font-size: 15px; letter-spacing: .1em; }
+@media (max-width: 860px) { .past { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .past-card { grid-template-columns: minmax(0, 1fr); } }
+
+/* faq */
+.faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 22px 0; font-family: var(--serif); font-weight: 700; font-size: 19px; line-height: 1.5; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--display); font-size: 24px; color: var(--neon); text-align: center; transition: transform 150ms ease-out; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .a { padding: 0 44px 24px 0; color: var(--ink-muted); max-width: 46em; }
+
+/* follow */
+.follow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.social { display: grid; gap: 8px; padding: 32px; border: 1px solid var(--line-strong); text-decoration: none; transition: border-color 150ms ease-out, background-color 150ms ease-out; }
+.social:hover { border-color: var(--neon); background: var(--bg-raised); }
+.social .k { font-family: var(--display); font-size: 13px; letter-spacing: .18em; color: var(--ink-muted); }
+.social .h { font-family: var(--display); font-weight: 600; font-size: clamp(24px, 3.4vw, 36px); letter-spacing: .02em; line-height: 1.2; overflow-wrap: anywhere; }
+.social .d { color: var(--ink-muted); font-size: 15px; }
+.social .go { color: var(--neon); font-weight: 500; font-size: 15px; margin-top: 8px; }
+@media (max-width: 720px) { .follow { grid-template-columns: minmax(0, 1fr); } .social { padding: 24px; } }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; font-size: 15px; }
+.facts .k { font-family: var(--display); font-size: 12px; letter-spacing: .18em; color: var(--ink-muted); margin-bottom: 6px; }
+.copy { font: inherit; font-size: 13px; color: var(--neon); background: none; border: 1px solid var(--line-strong); border-radius: 2px; padding: 2px 10px; margin-left: 8px; cursor: pointer; }
+@media (max-width: 720px) { .facts { grid-template-columns: minmax(0, 1fr); } }
+
+/* footer + warning */
+footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
+.foot { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); padding-bottom: 32px; }
+.foot .logo-s { width: 180px; height: auto; mix-blend-mode: lighten; display: block; }
+.warning { background: var(--ink); color: var(--bg); font-weight: 700; letter-spacing: .08em; font-size: clamp(15px, 2vw, 20px); padding-block: 18px calc(18px + env(safe-area-inset-bottom, 0px)); padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); text-align: center; }
+.warning span { display: inline-block; }
+.warning i { display: inline-block; width: 1px; height: 1em; background: currentColor; opacity: .5; margin: 0 16px; vertical-align: -2px; }
+
+/* floating cta */
+.float { position: fixed; z-index: 25; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+.float .btn { border-radius: 999px; padding: 14px 22px; }
+@media (max-width: 520px) { .float { left: calc(16px + env(safe-area-inset-left, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); } .float .btn { width: 100%; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="主選單">
+  <div class="nav-inner" id="navInner">
+    <a class="brand" href="#top">LECTURES BY THE GLASS</a>
+    <a href="#about">我們是誰</a>
+    <a href="#events">近期場次</a>
+    <a href="#pillars">講什麼</a>
+    <a href="#night">一場怎麼進行</a>
+    <a href="#faq">常見問題</a>
+    <a href="#follow">追蹤我們</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="coasters" viewBox="0 0 360 360" aria-hidden="true">
+    <circle cx="250" cy="110" r="96" fill="none" stroke="#3a352e" stroke-width="2"/>
+    <circle cx="250" cy="110" r="72" fill="none" stroke="#3a352e" stroke-width="1"/>
+    <circle cx="140" cy="230" r="56" fill="#b3122e"/>
+    <circle cx="262" cy="262" r="40" fill="#3f6a26"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <img class="logo flicker" src="assets/logo.png" width="738" height="380" alt="Lectures by the glass 學術酒吧">
+      <h1>最好的問題，<br>常常不是在<em>教室裡</em><br>問出來的。</h1>
+      <p class="sub">學術酒吧把領域專家請進酒吧。只開 35 席，配上與主題呼應的酒，在一杯酒的距離，問出你在教室裡不敢問的問題。</p>
+      <div class="ctas">
+        <a class="btn pri" id="heroCta" href="#events">看近期場次</a>
+        <a class="btn" href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener">追蹤 Instagram</a>
+      </div>
+    </div>
+    <aside class="next" id="nextBox" aria-label="下一場"></aside>
+  </div>
+</header>
+
+<section class="manifesto band" aria-label="為什麼有學術酒吧">
+  <div class="wrap">
+    <p class="eyebrow">Why we pour</p>
+    <ul class="mlist" id="mlist">
+      <li>我想認真聊點什麼。</li>
+      <li>但身邊的場合，不是太嚴肅，就是太膚淺。</li>
+      <li>講座太孤單，讀書會太重，酒吧又太淺。</li>
+      <li>如果有一個地方，可以聽懂行的人好好講，</li>
+      <li>也可以舉手問一個笨問題，</li>
+      <li class="answer">那就是學術酒吧。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">About · 我們是誰</p>
+      <h2 class="h2">一間讓專家走下講台的小型知識酒館</h2>
+      <p class="lede">每個月一場、90 到 120 分鐘。先聽懂，再說真話。你帶走一個能用來理解自己、關係或世界的新觀點，和一個能延續到晚餐的話題。</p>
+    </div>
+    <div class="promises">
+      <div class="promise">
+        <div class="num">1<small>SPEAKER</small></div>
+        <h3>請領域專家來講</h3>
+        <p>每場邀請在該領域深耕的人，例如國文系教授、諮商心理師、廣告總監，講他們每天在研究、在面對的事。</p>
+      </div>
+      <div class="promise">
+        <div class="num">35<small>SEATS</small></div>
+        <h3>只開 35 席</h3>
+        <p>小桌坐、每桌都被聽見。人數少，才問得到講者，也才認識得到同桌的人。</p>
+      </div>
+      <div class="promise">
+        <div class="num">1<small>PAIRING</small></div>
+        <h3>與主題呼應的酒</h3>
+        <p>每場依主題挑選搭配的酒，可能是紅酒、白酒，或為主題選的酒款。酒是話題與教材，不是主角；近期場次皆提供無酒精版本。</p>
+      </div>
+    </div>
+    <div class="notlist">
+      <span class="lbl">WE ARE NOT</span>
+      <span class="x">職場技能課</span><span class="x">商業交流會</span><span class="x">喝到茫的派對</span><span class="x">心靈雞湯</span>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="events" style="background:linear-gradient(180deg,var(--bg) 0%,#141110 100%)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Upcoming · 近期場次</p>
+      <h2 class="h2">下一個問題，在這裡開講</h2>
+    </div>
+    <div class="events" id="eventList"></div>
+  </div>
+</section>
+
+<section class="band" id="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Four pillars · 講什麼</p>
+      <h2 class="h2">四根支柱，四類問題</h2>
+      <p class="lede">每一場都從一個跟你有關的問題出發，落在這四類主題裡。</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar p-psyche"><span class="pk">PILLAR 01</span><h3>關係與心理</h3><ul><li>為什麼我們總愛上不該愛的人？</li><li>為什麼情侶總是為同一件事吵架？</li></ul></article>
+      <article class="pillar p-canon"><span class="pk">PILLAR 02</span><h3>禁忌、文學<br>與歷史</h3><ul><li>400 年前的禁書，為什麼今天還讀得下去？</li><li>我們為什麼需要儀式？</li></ul></article>
+      <article class="pillar p-senses"><span class="pk">PILLAR 03</span><h3>哲學與人生</h3><ul><li>人生有意義嗎，還是我們替它找意義？</li><li>AI 會思考嗎，還是只是看起來會？</li></ul></article>
+      <article class="pillar p-city"><span class="pk">PILLAR 04</span><h3>社會、金錢<br>與城市</h3><ul><li>錢為什麼讓人不快樂？</li><li>為什麼聰明人也會被詐騙？</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="night" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">One night · 一場怎麼進行</p>
+      <h2 class="h2">先硬後軟：一杯酒的時間軸</h2>
+      <p class="lede">知識放前半，討論和遊戲放後半。每一場都有一個揭曉的時刻，和一個敢說真話的時刻。</p>
+    </div>
+    <div class="tl">
+      <div class="tl-step"><div class="tl-time">0′<small>–15′</small></div><h3>入場，不用開口的破冰</h3><p>領一杯今天的酒，在匿名便利貼牆寫下一句話。</p></div>
+      <div class="tl-step"><div class="tl-time">15′<small>–50′</small></div><h3>聽懂：硬知識</h3><p>講者用研究與數據，把一個問題講清楚。</p></div>
+      <div class="tl-step peak"><div class="tl-time">50′<small>–90′</small></div><h3>桌邊任務與揭曉</h3><p>以桌為單位做小實驗、比稿或盲測，用紅綠杯墊投票，再揭曉答案。</p></div>
+      <div class="tl-step"><div class="tl-time">90′<small>–120′</small></div><h3>最後一杯問題</h3><p>開放提問。講者從牆上挑幾張便利貼現場回答，合照，下一場見。</p></div>
+    </div>
+    <div class="tl-bar" aria-hidden="true"><span style="flex:15;background:var(--line-strong)"></span><span style="flex:35;background:var(--ink-muted)"></span><span style="flex:40;background:var(--neon)"></span><span style="flex:30;background:var(--line-strong)"></span></div>
+    <div class="tl-cap" aria-hidden="true"><span>0 MIN</span><span>120 MIN</span></div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--bg-raised)">
+  <div class="wrap letter">
+    <p class="eyebrow" style="margin-bottom:24px">House rules · 開場前我們會說</p>
+    <blockquote>今天這裡可以問<span>笨問題</span>，也可以只聽不說；<br>會有小實驗，可以不參加。</blockquote>
+    <p class="sig">每一場都從這句話開始。你可以只是坐著喝完一杯，也可以舉手問講者那個放在心裡很久的問題。</p>
+  </div>
+</section>
+
+<section class="band" id="past">
+  <div class="wrap past">
+    <div>
+      <p class="eyebrow">Last rounds · 過去場次</p>
+      <h2 class="h2">第一場，35 席坐滿</h2>
+      <p class="lede">七月的第一場，我們聊依附關係，現場的互動比我們預期的還熱烈。現場照片都放在 Instagram。</p>
+    </div>
+    <div class="past-card">
+      <div class="coaster p-psyche"><div><b>01</b><span>VOL.</span></div></div>
+      <div>
+        <p class="stat">2026.07.04 · 35 / 35 SEATS</p>
+        <h3>依附關係</h3>
+        <p><a href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener" style="color:var(--neon);text-decoration:none">在 Instagram 看現場 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FAQ · 常見問題</p>
+      <h2 class="h2">報名前，你可能想問</h2>
+    </div>
+    <div class="faq">
+      <details><summary>我對主題不熟，也沒讀過相關的書，可以來嗎？</summary><p class="a">可以。每一場都是為「沒讀過也聽得懂」設計的，講者會從一個跟你有關的問題講起。有興趣，就夠了。</p></details>
+      <details><summary>我不喝酒，可以參加嗎？</summary><p class="a">可以。近期場次都提供無酒精版本，報名時可以選。酒是話題，不是門票。</p></details>
+      <details><summary>喝到喜歡的酒，想多嚐一些怎麼辦？</summary><p class="a">歡迎洽詢現場工作人員，可以了解當天酒款的資訊，或在現場加購。</p></details>
+      <details><summary>一個人去會不會很尷尬？</summary><p class="a">很多人是一個人來的。現場以桌為單位安排，破冰用匿名便利貼，不需要先開口；所有互動都可以選擇不參加。</p></details>
+      <details><summary>票買了可以退嗎？</summary><p class="a">依各場報名頁的規定。目前票券售出後不接受退換或延用；若無法出席，可以轉讓給親友，請在活動前私訊 IG 告知更名資訊。</p></details>
+      <details><summary>可以開發票或收據嗎？</summary><p class="a">目前報名費不提供收據或發票，有報帳需求請在報名前評估。之後若有調整，會寫在各場報名頁。</p></details>
+      <details><summary>有年齡限制嗎？現場會拍照嗎？</summary><p class="a">活動有提供酒精飲品，未滿 18 歲請勿報名。活動全程會攝影紀錄，畫面可能用於品牌社群；不想入鏡可以在現場告訴工作人員。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="follow" style="background:linear-gradient(180deg,var(--bg) 0%,#16120d 100%)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Follow · 追蹤我們</p>
+      <h2 class="h2">新場次、現場照、下一個問題，<br>都先在這裡公布</h2>
+    </div>
+    <div class="follow">
+      <a class="social" href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener">
+        <span class="k">INSTAGRAM</span>
+        <span class="h">@lectures_bytheglass</span>
+        <span class="d">場次公布、講者介紹、BRAIN SNACKS 知識點心，報名問題也可以私訊小盒。</span>
+        <span class="go">前往 Instagram →</span>
+      </a>
+      <a class="social" href="https://www.threads.com/@lectures_bytheglass" target="_blank" rel="noopener">
+        <span class="k">THREADS</span>
+        <span class="h">@lectures_bytheglass</span>
+        <span class="d">我們在這裡丟問題、做投票，下一季要講什麼，由你決定。</span>
+        <span class="go">前往 Threads →</span>
+      </a>
+    </div>
+    <div class="facts">
+      <div><div class="k">VENUE 場地</div>Drizzle by Fourplay<br><span class="muted">台北市大安區東豐街 61 號</span></div>
+      <div><div class="k">HOST 主辦</div><a href="https://www.instagram.com/cheershualien/" target="_blank" rel="noopener" style="text-decoration:none">@cheershualien</a><br><span class="muted">花蓮的酒類專賣店</span></div>
+      <div><div class="k">CONTACT 聯絡</div><span id="mail">evawu@cheershualien.com</span><button class="copy" id="copyMail" type="button">複製</button><br><span class="muted">合作、包場與講者邀約</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <img class="logo-s" src="assets/logo.png" width="738" height="380" alt="Lectures by the glass">
+    <span>學術酒吧 Lecture by the Glass · 把專家請進酒吧，把問題留給你。</span>
+    <span>© 2026 Lectures by the Glass</span>
+  </div>
+  <div class="warning" role="note"><span>禁止酒駕</span><i aria-hidden="true"></i><span>飲酒過量，有害健康</span></div>
+</footer>
+
+<div class="float"><a class="btn pri" id="floatCta" href="#events">看近期場次</a></div>
+
+<script>
+/* ===== 場次資料：更新場次只要改這裡 =====
+   url：join1 報名連結；還沒開賣就留 null，按鈕會改成「追蹤開賣消息」。 */
+var IG = "https://www.instagram.com/lectures_bytheglass/";
+var EVENTS = [
+  {
+    vol: "03", series: "教授開講", pillar: "canon", pillarName: "禁忌、文學與歷史",
+    date: "12.12", day: "SAT", time: "14:00", theme: "情色時代",
+    question: "誰在出價，誰被標價？一起讀被禁四百年的《金瓶梅》",
+    speaker: "胡衍南", speakerTitle: "臺灣師範大學國文學系教授",
+    highlights: ["不用讀過：開場 3 分鐘看懂西門府誰是誰", "帶著一個角色的視角，聽西門慶、潘金蓮、如意兒三個人的交換", "教授帶讀原文（含情慾描寫），中間穿插互動，結尾小組討論"],
+    priceMain: "999", priceNote: "早鳥 999 元（11/22 前）・原價 1,199 元<br>雙場聯票另有優惠・限 18 歲以上・含一杯葡萄酒（也有無酒精版本）",
+    status: "即將開賣", url: null, page: "jinpingmei.html"
+  },
+  {
+    vol: "04", series: "專家開講", pillar: "psyche", pillarName: "關係與心理",
+    date: "12.19", day: "SAT", time: "14:00", theme: "被誤會的大腦",
+    question: "為什麼他（或我）很努力，看起來卻像不夠努力？聊聊成人 ADHD",
+    speaker: "陳瑜慧", speakerTitle: "諮商心理師、藝術治療師，華昕藝心心理諮商所所長", speakerUrl: "https://www.hua-sin.com/therapist?id=1",
+    highlights: ["不用確診，也不會被診斷：可以為自己來，也可以為身邊的人來", "帶走一份國際通用的篩檢量表，聽心理師告訴你怎麼讀它", "匿名問題牆與雙視角桌邊任務，不用開口也能參與"],
+    priceMain: "999", priceNote: "早鳥 999 元（12/5 前）・原價 1,199 元<br>雙場聯票另有優惠・含一杯紅酒、白酒或去醇葡萄酒",
+    status: "即將開賣", url: null, page: "adhd.html"
+  }
+];
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+function cta(ev){
+  return ev.url
+    ? '<a class="btn pri" href="' + esc(ev.url) + '" target="_blank" rel="noopener">報名這一場 <span class="arr">→</span></a>'
+    : '<a class="btn" href="' + IG + '" target="_blank" rel="noopener">追蹤開賣消息 <span class="arr">→</span></a>';
+}
+document.getElementById("eventList").innerHTML = EVENTS.map(function(ev){
+  var hl = ev.highlights.length ? '<ul class="ev-hl">' + ev.highlights.map(function(h){ return "<li>" + esc(h) + "</li>"; }).join("") + "</ul>" : "";
+  return '<article class="ev">' +
+    '<div class="ev-poster p-' + ev.pillar + '"><div><div class="volk">VOL.</div><div class="vol">' + ev.vol + '</div></div><div class="theme">' + esc(ev.theme) + '</div></div>' +
+    '<div class="ev-body">' +
+      '<div class="tags"><span class="tag dot t-' + ev.pillar + '">' + esc(ev.pillarName) + '</span><span class="tag state">' + esc(ev.status) + '</span></div>' +
+      '<div class="ev-meta">VOL.' + ev.vol + ' · ' + ev.date + ' ' + ev.day + ' ' + ev.time + ' · DRIZZLE</div>' +
+      '<h3 class="ev-q">' + (ev.page ? '<a href="' + esc(ev.page) + '">' + esc(ev.question) + '</a>' : esc(ev.question)) + '</h3>' +
+      '<p class="ev-spk"><b>' + (ev.speakerUrl ? '<a href="' + esc(ev.speakerUrl) + '" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px">' + esc(ev.speaker) + '</a>' : esc(ev.speaker)) + '</b>・' + esc(ev.speakerTitle) + '</p>' + hl +
+      '<div class="ev-foot"><p class="price">' + (ev.priceMain ? "<b>NT$" + ev.priceMain + "</b>起<br>" : "") + ev.priceNote + '</p><div class="ev-actions">' + (ev.page ? '<a class="btn" href="' + esc(ev.page) + '">看場次介紹</a>' : '') + cta(ev) + '</div></div>' +
+    '</div></article>';
+}).join("");
+
+var nx = EVENTS[0];
+document.getElementById("nextBox").innerHTML =
+  '<span class="k">Next round · 下一場</span>' +
+  '<span class="when">' + nx.date + ' <span style="font-size:18px;letter-spacing:.14em;color:var(--ink-muted)">' + nx.day + ' ' + nx.time + '</span></span>' +
+  '<span class="q">' + esc(nx.question) + '</span>' +
+  '<span class="muted" style="font-size:14px">' + esc(nx.speaker) + '・Drizzle by Fourplay</span>' +
+  (nx.page ? '<a href="' + esc(nx.page) + '">看場次介紹 →</a>' : '') +
+  (nx.url ? '<a href="' + esc(nx.url) + '" target="_blank" rel="noopener">前往 join1 報名 →</a>' : (nx.page ? '' : '<a href="#events">' + esc(nx.status) + '，看場次介紹 →</a>'));
+
+var open = EVENTS.filter(function(e){ return e.url; })[0];
+if (open) {
+  [document.getElementById("floatCta"), document.getElementById("heroCta")].forEach(function(a){
+    a.href = open.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "報名 Vol." + open.vol;
+  });
+}
+
+/* manifesto lines light up as they cross the middle of the screen; all lines are readable at rest */
+(function(){
+  var items = document.querySelectorAll("#mlist li:not(.answer)");
+  if (!("IntersectionObserver" in window)) { items.forEach(function(li){ li.classList.add("lit"); }); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle("lit", e.isIntersecting); }); }, { rootMargin: "-30% 0px -30% 0px" });
+  items.forEach(function(li){ io.observe(li); });
+})();
+
+/* nav: highlight the section in view */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']:not(.brand)"));
+  var map = {}; links.forEach(function(a){ map[a.getAttribute("href").slice(1)] = a; });
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting && map[e.target.id]) {
+        links.forEach(function(a){ a.classList.remove("cur"); });
+        map[e.target.id].classList.add("cur");
+        var nav = document.getElementById("navInner"), a = map[e.target.id];
+        nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  Object.keys(map).forEach(function(id){ var s = document.getElementById(id); if (s) io.observe(s); });
+})();
+
+document.getElementById("copyMail").addEventListener("click", function(){
+  var btn = this, txt = document.getElementById("mail").textContent;
+  function sel(){ var r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "已選取"; }
+  try { navigator.clipboard.writeText(txt).then(function(){ btn.textContent = "已複製"; }, sel); } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>

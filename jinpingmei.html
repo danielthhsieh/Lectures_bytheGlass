@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>情色時代：誰在出價，誰被標價？｜學術酒吧 Vol.03</title>
+<meta name="description" content="12/12（六）學術酒吧 Vol.03：師大胡衍南教授帶你讀《金瓶梅》。不用讀過，只開 35 席，含一杯葡萄酒（也有無酒精版本）。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="情色時代：誰在出價，誰被標價？｜學術酒吧 Vol.03">
+<meta property="og:description" content="12/12（六）師大胡衍南教授帶你讀《金瓶梅》。不用讀過，只開 35 席。">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=Oswald:wght@500;600&display=swap">
+<style>
+/* Vol.03 場次頁：沿用首頁 index.html 的色票與元件；本場支柱色為 canon（紅）。 */
+:root {
+  color-scheme: dark;
+  --bg: #0e0c0a; --bg-raised: #1b1815; --bg-band: #14110e; --line: #3a352e; --line-strong: #8a7f6e;
+  --ink: #f3ece0; --ink-muted: #a99e8d; --cream: #f8f1e4;
+  --neon: #f0db8f; --on-neon: #14110e; --neon-soft: #33290f; --glow: rgba(184,137,42,.55);
+  --canon: #ff6b78; --canon-fill: #b3122e;
+  --display: "Oswald", "Noto Sans TC", "Arial Narrow", sans-serif;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --max: 1120px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.band { padding-block: 88px; border-top: 1px solid var(--line); }
+.band.alt { background: var(--bg-band); }
+@media (max-width: 720px) { .band { padding-block: 64px; } }
+.eyebrow { font-family: var(--display); font-weight: 500; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--canon); }
+.h2 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 4.2vw, 40px); line-height: 1.3; margin-top: 14px; }
+.lede { font-size: 17px; line-height: 1.85; color: var(--ink-muted); max-width: 46em; margin-top: 18px; }
+.sec-head { margin-bottom: 40px; }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; padding: 14px var(--gutter-r) 0 var(--gutter-l); display: flex; justify-content: center; pointer-events: none; }
+.nav-inner { pointer-events: auto; display: flex; align-items: center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 6px; border: 1px solid var(--line); border-radius: 999px; background: rgba(14,12,10,.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav a { flex: none; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 7px 14px; border-radius: 999px; color: var(--ink-muted); transition: color 150ms ease-out, background-color 150ms ease-out; }
+.nav a:hover { color: var(--ink); }
+.nav a.brand { color: var(--ink); font-family: var(--display); letter-spacing: .14em; font-size: 13px; }
+.nav a.cur { color: var(--on-neon); background: var(--neon); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--sans); font-size: 16px; line-height: 20px; font-weight: 500; letter-spacing: .04em; padding: 14px 28px; border-radius: 2px; border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none; background: transparent; transition: background-color 150ms ease-out, filter 150ms ease-out; cursor: pointer; }
+.btn:hover { background: var(--bg-raised); }
+.btn.pri { background: var(--neon); border-color: var(--neon); color: var(--on-neon); font-weight: 700; box-shadow: 0 0 18px var(--glow); }
+.btn.pri:hover { filter: brightness(1.06); }
+.btn.pri.pending { background: transparent; color: var(--neon); border-style: dashed; box-shadow: none; cursor: default; }
+.btn .arr { font-family: var(--display); }
+
+/* hero */
+.hero { padding-block: 64px 80px; position: relative; overflow: hidden; }
+.hero .rings { position: absolute; right: -80px; top: 40px; width: 420px; height: 420px; pointer-events: none; }
+.meta { font-family: var(--display); font-weight: 500; font-size: 14px; letter-spacing: .16em; color: var(--ink-muted); }
+.series { font-family: var(--serif); font-weight: 700; font-size: 28px; color: var(--canon); margin-top: 28px; }
+.hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(48px, 8vw, 96px); line-height: 1.15; margin-top: 8px; }
+.hero .sub { font-size: 19px; line-height: 1.8; max-width: 36em; margin-top: 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.chip { font-size: 14px; line-height: 20px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line-strong); }
+.chip.key { font-weight: 700; background: var(--neon-soft); border-color: transparent; color: var(--neon); }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 32px; }
+.ctas .note { font-size: 15px; color: var(--ink-muted); }
+.byline { margin-top: 20px; font-size: 16px; color: var(--ink-muted); }
+.byline b { color: var(--ink); font-weight: 500; }
+@media (max-width: 860px) { .hero .rings { display: none; } }
+
+/* three trades */
+.trades { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.trade { background: var(--bg-raised); padding: 28px; display: grid; gap: 10px; align-content: start; }
+.trade .who { font-size: 14px; font-weight: 700; }
+.trade h3 { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.4; }
+.trade p { font-size: 16px; color: var(--ink-muted); }
+@media (max-width: 860px) { .trades { grid-template-columns: minmax(0, 1fr); } }
+
+/* flow */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.steps li { border-top: 2px solid var(--canon); padding-top: 14px; display: grid; gap: 6px; align-content: start; }
+.steps .n { font-family: var(--display); font-size: 14px; letter-spacing: .2em; color: var(--canon); }
+.steps b { font-size: 18px; font-weight: 700; }
+.steps span:last-child { font-size: 15px; color: var(--ink-muted); }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+
+/* speaker */
+.speaker { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: center; }
+.speaker h2 { font-family: var(--serif); font-weight: 900; font-size: 40px; margin-top: 10px; }
+.speaker .bio { font-size: 17px; margin-top: 16px; }
+.speaker .books { font-size: 15px; color: var(--ink-muted); margin-top: 12px; }
+.speaker img { width: 100%; max-width: 380px; aspect-ratio: 1 / 1; object-fit: contain; justify-self: center; }
+@media (max-width: 760px) { .speaker { grid-template-columns: minmax(0, 1fr); gap: 24px; } .speaker img { max-width: 280px; } }
+
+/* tickets */
+.tickets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.ticket { background: var(--bg-raised); padding: 24px; display: grid; gap: 6px; align-content: start; border: 2px solid transparent; }
+.ticket.best { border-color: var(--neon); }
+.ticket .k { font-size: 14px; font-weight: 700; color: var(--ink-muted); }
+.ticket.best .k { color: var(--neon); }
+.ticket .price { font-family: var(--display); font-size: 40px; font-weight: 600; line-height: 1.2; letter-spacing: .02em; }
+.ticket .price small { font-size: 16px; margin-left: 4px; color: var(--ink-muted); font-weight: 500; }
+.ticket .d { font-size: 15px; color: var(--ink-muted); }
+.fine { font-size: 15px; color: var(--ink-muted); margin-top: 24px; }
+.signup-row { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 28px; }
+@media (max-width: 960px) { .tickets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .tickets { grid-template-columns: minmax(0, 1fr); } }
+
+/* faq */
+.faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 22px 0; font-family: var(--serif); font-weight: 700; font-size: 19px; line-height: 1.5; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--display); font-size: 24px; color: var(--neon); text-align: center; transition: transform 150ms ease-out; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .a { padding: 0 44px 24px 0; color: var(--ink-muted); max-width: 46em; }
+
+/* next + back */
+.next { display: flex; flex-wrap: wrap; gap: 20px 32px; justify-content: space-between; align-items: center; }
+.next .k { font-size: 14px; color: var(--ink-muted); }
+.next .t { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.5; margin-top: 4px; }
+.next .links { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
+.foot { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); padding-bottom: 32px; }
+.foot a { text-decoration: none; }
+.foot .logo-s { width: 180px; height: auto; mix-blend-mode: lighten; display: block; }
+.warning { background: var(--ink); color: var(--bg); font-weight: 700; letter-spacing: .08em; font-size: clamp(15px, 2vw, 20px); padding-top: 18px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); text-align: center; }
+.warning span { display: inline-block; }
+.warning i { display: inline-block; width: 1px; height: 1em; background: currentColor; opacity: .5; margin: 0 16px; vertical-align: -2px; }
+
+/* floating cta */
+.float { position: fixed; z-index: 25; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+.float .btn { border-radius: 999px; padding: 14px 22px; }
+.float .btn.pending { background: rgba(14,12,10,.9); }
+@media (max-width: 520px) { .float { left: calc(16px + env(safe-area-inset-left, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); } .float .btn { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="場次選單">
+  <div class="nav-inner" id="navInner">
+    <a class="brand" href="index.html">← LECTURES BY THE GLASS</a>
+    <a href="#trades">三種交換</a>
+    <a href="#flow">現場流程</a>
+    <a href="#speaker">講者</a>
+    <a href="#tickets">票種</a>
+    <a href="#faq">常見問題</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="rings" viewBox="0 0 420 420" aria-hidden="true">
+    <circle cx="240" cy="200" r="170" fill="none" stroke="#b3122e" stroke-width="2" opacity=".55"/>
+    <circle cx="240" cy="200" r="134" fill="none" stroke="#3a352e" stroke-width="1"/>
+  </svg>
+  <div class="wrap">
+    <p class="meta">VOL.03 · 12.12 SAT 14:00–15:30 · DRIZZLE BY FOURPLAY</p>
+    <p class="series">情色時代</p>
+    <h1>誰在出價，<br>誰被標價？</h1>
+    <p class="sub">師大教授帶你讀《金瓶梅》：一本被禁四百年的書，寫盡身體、金錢與愛的交換。四百年前的人在交換什麼，今天的我們也在交換。</p>
+    <div class="chips">
+      <span class="chip key">不用讀過《金瓶梅》</span>
+      <span class="chip">學者講座・90 分鐘</span>
+      <span class="chip">只開 35 席</span>
+      <span class="chip">一杯葡萄酒（也有無酒精版本）</span>
+      <span class="chip">限 18 歲以上</span>
+    </div>
+    <div class="ctas">
+      <a class="btn pri" data-signup href="#tickets">立即報名 <span class="arr">→</span></a>
+      <span class="note">早鳥 999 元，11/22 截止</span>
+    </div>
+    <p class="byline">講者　<b>胡衍南</b>｜臺灣師範大學國文學系教授，著有《情色時代：《金瓶梅》與明清豔情小說研究》</p>
+  </div>
+</header>
+
+<section class="band" id="trades">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Three trades</p>
+      <h2 class="h2">三個人，三種交換。你一定認識其中一種。</h2>
+    </div>
+    <div class="trades">
+      <article class="trade">
+        <span class="who" style="color:var(--neon)">出價的人｜西門慶</span>
+        <h3>有錢有權，為什麼還不安？</h3>
+        <p>一個什麼都買得起的暴發戶，為什麼要一再證明自己還握有一切？</p>
+      </article>
+      <article class="trade">
+        <span class="who" style="color:var(--canon)">被標價的人｜潘金蓮</span>
+        <h3>她被賣了兩次，然後學會自己出價</h3>
+        <p>被罵了四百年的「壞女人」，是天生的，還是被逼出來的？</p>
+      </article>
+      <article class="trade">
+        <span class="who">只剩自己能押的人｜如意兒</span>
+        <h3>為了被留下來，可以多卑微？</h3>
+        <p>古人說她犯賤。但從沒有人問過她一聲：「妳為什麼？」</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How to play</p>
+      <h2 class="h2">帶著一個人的眼睛，跟我們一起聽這個故事。</h2>
+      <p class="lede">當天我們會邀請你，站在西門府裡外某一個人的位置。接下來的 90 分鐘，你用他或她的眼睛看這場交換：誰在出價、誰被標價，而你手上又有什麼？講座中間穿插互動，結尾和同桌的人一起小組討論。</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">01</span><b>開場｜看懂西門府</b><span>3 分鐘看懂誰是誰，再看四百年前的人，怎麼替這些角色貼上標籤</span></li>
+      <li><span class="n">02</span><b>三章｜三個人的故事</b><span>西門慶、潘金蓮、如意兒，教授帶大家讀原文，包括書中直白的情慾描寫</span></li>
+      <li><span class="n">03</span><b>中場互動</b><span>章節之間各有一段互動，從你代表的那個人出發，回應書裡的問題</span></li>
+      <li><span class="n">04</span><b>小組討論與結語</b><span>同桌挑一個問題聊，再把問題帶回給教授</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="speaker">
+  <div class="wrap speaker">
+    <div>
+      <p class="eyebrow">Speaker</p>
+      <h2>胡衍南</h2>
+      <p class="bio">臺灣師範大學國文學系教授、進修推廣學院院長，清華大學中國文學博士，翰林版高中國文教科書主編。YouTube 與 Podcast 頻道「胡大俠說書」。</p>
+      <p class="books">著有《金瓶梅飲食男女》《蘭陵笑笑生與《金瓶梅》》《金瓶梅到紅樓夢》。這場講座的名字，來自他的《情色時代：《金瓶梅》與明清豔情小說研究》。</p>
+    </div>
+    <img src="assets/speaker-hu-yannan.png" alt="胡衍南教授" width="474" height="473" loading="lazy">
+  </div>
+</section>
+
+<section class="band alt" id="tickets">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Tickets</p>
+      <h2 class="h2">每一張票都含一杯葡萄酒</h2>
+    </div>
+    <div class="tickets">
+      <div class="ticket best"><span class="k">單場早鳥・11/22 前</span><span class="price">999<small>元</small></span><span class="d">12/12《金瓶梅》場</span></div>
+      <div class="ticket"><span class="k">單場原價</span><span class="price">1,199<small>元</small></span><span class="d">11/23 起</span></div>
+      <div class="ticket"><span class="k">雙場聯票早鳥</span><span class="price">1,999<small>元</small></span><span class="d">加 12/19 成人 ADHD 場</span></div>
+      <div class="ticket"><span class="k">團體價・4 人以上</span><span class="price">899<small>元</small></span><span class="d">每人，限合作團體專屬碼</span></div>
+    </div>
+    <p class="fine">活動開始前皆可申請取消與退費。內容涉及古典小說中的情慾描寫，限 18 歲以上。</p>
+    <div class="signup-row">
+      <a class="btn pri" data-signup href="#tickets">前往報名 <span class="arr">→</span></a>
+      <span class="note" data-signup-note></span>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">First time?</p>
+      <h2 class="h2">第一次來，你可能會想問</h2>
+    </div>
+    <div class="faq">
+      <details><summary>完全沒讀過《金瓶梅》可以來嗎？</summary><p class="a">可以，這場就是為沒讀過的人設計的。開場會先用 3 分鐘讓你看懂誰是誰，其餘的交給教授和原文。</p></details>
+      <details><summary>現場會讀到情慾描寫的原文嗎？</summary><p class="a">會。教授會帶大家讀原文，包括書中直白的情慾描寫，並說明作者為什麼這樣寫。限 18 歲以上。</p></details>
+      <details><summary>一個人來會尷尬嗎？</summary><p class="a">不會。現場以桌為單位，中間有互動、結尾有小組討論，每個人都帶著一個角色的視角聽故事，同桌自然有話聊。</p></details>
+      <details><summary>不喝酒可以嗎？</summary><p class="a">可以。每張票含一杯紅酒或白酒，也有無酒精版本，體驗完全一樣。</p></details>
+      <details><summary>票買了可以退嗎？</summary><p class="a">可以。活動開始前，都可以直接在報名網站申請取消與退費。</p></details>
+      <details><summary>地點在哪裡？</summary><p class="a">Drizzle by Fourplay，台北市大安區東豐街 61 號。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" aria-label="下一場">
+  <div class="wrap next">
+    <div>
+      <p class="k">下一週・Vol.04・12/19（六）</p>
+      <p class="t">一本被誤會的書之後，換一個被誤會的大腦：成人 ADHD</p>
+    </div>
+    <div class="links">
+      <a class="btn" href="adhd.html">看 Vol.04 場次介紹 <span class="arr">→</span></a>
+      <a class="btn" href="#tickets">看雙場聯票</a>
+      <a class="btn" href="index.html#events">回首頁看所有場次</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" aria-label="回到學術酒吧首頁"><img class="logo-s" src="assets/logo.png" width="738" height="380" alt="Lectures by the glass 學術酒吧"></a>
+    <span>學術酒吧 Lecture by the Glass · 把專家請進酒吧，把問題留給你。</span>
+    <a href="index.html">← 回首頁</a>
+  </div>
+  <div class="warning" role="note"><span>禁止酒駕</span><i aria-hidden="true"></i><span>飲酒過量，有害健康</span></div>
+</footer>
+
+<div class="float"><a class="btn pri" data-signup data-float href="#tickets">報名 Vol.03</a></div>
+
+<script>
+/* ===== 報名連結：拿到 join1 網址後貼在這裡（首頁 EVENTS 的 url 也要填同一個）===== */
+var SIGNUP_URL = "";
+
+(function () {
+  var btns = document.querySelectorAll("[data-signup]");
+  var note = document.querySelector("[data-signup-note]");
+  btns.forEach(function (a) {
+    if (SIGNUP_URL) {
+      a.href = SIGNUP_URL; a.target = "_blank"; a.rel = "noopener";
+    } else {
+      a.classList.add("pending");
+      a.setAttribute("aria-disabled", "true");
+      a.href = "#tickets";
+      a.textContent = "報名即將開放";
+    }
+  });
+  if (note && !SIGNUP_URL) note.innerHTML = '報名連結即將公布，可先追蹤 <a href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener" style="color:var(--neon)">Instagram @lectures_bytheglass</a>。';
+})();
+
+/* nav: highlight the section in view */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var map = {}; links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting && map[e.target.id]) {
+        links.forEach(function (a) { a.classList.remove("cur"); });
+        map[e.target.id].classList.add("cur");
+        var nav = document.getElementById("navInner"), a = map[e.target.id];
+        nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+})();
+</script>
+</body>
+</html>

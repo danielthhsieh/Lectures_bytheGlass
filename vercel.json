@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/lecture-by-the-glass", "destination": "/", "permanent": true },
+    { "source": "/vol3-jinpingmei", "destination": "/jinpingmei", "permanent": true },
+    { "source": "/vol3", "destination": "/jinpingmei", "permanent": false },
+    { "source": "/vol4", "destination": "/adhd", "permanent": false },
+    { "source": "/december", "destination": "/#events", "permanent": false }
+  ]
+}
