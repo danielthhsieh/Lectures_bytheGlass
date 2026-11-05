@@ -205,6 +205,84 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
 .float { position: fixed; z-index: 25; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
 .float .btn { border-radius: 999px; padding: 14px 22px; }
 @media (max-width: 520px) { .float { left: calc(16px + env(safe-area-inset-left, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); } .float .btn { width: 100%; } }
+
+/* ===== 品牌視覺（Brand Visual Guideline 2026.11）：漸層底、光暈、顆粒、Paper 按鈕 ===== */
+:root {
+  --bg: #111013; --bg-raised: rgba(255,255,255,.045); --bg-band: rgba(255,255,255,.022);
+  --line: rgba(243,236,224,.14); --line-strong: rgba(243,236,224,.42);
+  --ink: #F3ECE0; --ink-muted: #A99E8D; --cream: #F3ECE0; --paper: #F0E8D9; --ink-d: #111013;
+  --neon: #FFD978; --on-neon: #111013; --neon-soft: rgba(255,217,120,.13); --glow: rgba(255,217,120,.42);
+  --lime: #D2F169; --rose: #FF4D7A;
+  --psyche: #D2F169; --canon: #FF8C96; --senses: #9B7BFF; --city: #FFB27A;
+  --g-violet: linear-gradient(160deg,#0B0A1E 0%,#2A1F7A 52%,#6B2FD0 100%);
+  --g-ember: radial-gradient(120% 90% at 78% 22%,#FF4A5E 0%,#BA1833 30%,#4A0816 62%,#0E0709 100%);
+  --g-amber: radial-gradient(110% 90% at 20% 15%,#F0B35A 0%,#B64A25 28%,#3A160A 62%,#100A07 100%);
+  --g-signal: linear-gradient(135deg,#141030 0%,#3733C9 48%,#B64A25 100%);
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+body { background: var(--bg); }
+body::before { background: var(--bg); }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 40; opacity: .07; mix-blend-mode: overlay; background-image: var(--grain); }
+.grain-l { position: relative; isolation: isolate; }
+.grain-l::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2; mix-blend-mode: overlay; background-image: var(--grain); z-index: 0; }
+
+/* hero：漸層底 → 模糊實拍 → 一個主光 → 文字 */
+.hero { background: var(--hero-g, var(--g-violet)); isolation: isolate; }
+.hero > .wrap { position: relative; }
+.hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; opacity: .2; mix-blend-mode: overlay; background-image: var(--grain); }
+.hero-bg .ph { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(14px) brightness(.42) saturate(.88); opacity: .6; }
+.hero-bg .tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,30,.15) 0%, rgba(17,16,19,.55) 70%, #111013 100%); }
+.hero-bg .lamp { position: absolute; right: -10%; top: -18%; width: min(760px, 95vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--lamp, rgba(255,217,120,.5)) 0%, rgba(255,77,122,.14) 42%, transparent 70%); filter: blur(30px); }
+.hero-bg .streak { position: absolute; left: 58%; top: -20%; width: 150px; height: 150%; transform: rotate(14deg); background: linear-gradient(90deg, transparent, #FF2E3E 30%, #FFE1E4 50%, #FF2E3E 70%, transparent); filter: blur(24px); opacity: .75; }
+.hero-bg .tube { position: absolute; right: max(24px, 6vw); top: 96px; width: 132px; height: 132px; border-radius: 50%; border: 4px solid #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: .1em; color: #fff;
+  box-shadow: 0 0 4px #fff, 0 0 14px var(--nc, #FFD978), 0 0 34px var(--nc, #FFD978), inset 0 0 14px var(--nc, #FFD978);
+  text-shadow: 0 0 4px #fff, 0 0 14px var(--nc, #FFD978), 0 0 30px var(--nc, #FFD978); }
+@media (max-width: 860px) { .hero-bg .tube { width: 84px; height: 84px; font-size: 17px; top: 76px; right: 16px; } .hero-bg .streak { left: 70%; } }
+@media (max-width: 600px) { .hero-bg .tube { display: none; } }
+.hero h1 em { color: var(--neon); text-shadow: 0 0 28px var(--glow); }
+
+/* 按鈕：Primary 一律 Paper 膠囊 */
+.btn { border-radius: 999px; }
+.btn.pri { background: var(--paper); border-color: var(--paper); color: var(--ink-d); box-shadow: 0 0 26px rgba(255,217,120,.22); }
+.btn.pri.pending { background: transparent; color: var(--neon); border-color: var(--neon); border-style: dashed; box-shadow: none; }
+.float .btn.pending { background: rgba(17,16,19,.9); }
+.nav-inner { background: rgba(17,16,19,.72); }
+.nav a.cur { background: var(--paper); color: var(--ink-d); }
+.chip.key { background: var(--neon-soft); color: var(--neon); }
+.tag.state { color: var(--neon); background: var(--neon-soft); }
+
+/* 卡片：半透明 Ink、14px 圓角 */
+aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale-note div, .take-card, .pact {
+  background: var(--bg-raised); border: 1px solid var(--line); border-radius: 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.ticket.best { border: 1.5px solid var(--neon); box-shadow: 0 0 28px rgba(255,217,120,.18); }
+.promises, .pacts { gap: 16px; background: none; border: 0; }
+.ev { overflow: hidden; }
+.band.alt { background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,0)); }
+
+/* 場次海報塊：主題漸層＋顆粒＋（文學場）光痕 */
+.ev-poster { position: relative; overflow: hidden; isolation: isolate; }
+.ev-poster > * { position: relative; z-index: 2; }
+.ev-poster::after { content: ""; position: absolute; inset: 0; z-index: 1; opacity: .22; mix-blend-mode: overlay; background-image: var(--grain); }
+.p-canon { background: var(--g-ember); } .p-psyche { background: var(--g-signal); } .p-senses { background: var(--g-violet); } .p-city { background: var(--g-amber); }
+.ev-poster.p-canon::before { content: ""; position: absolute; z-index: 1; left: 45%; top: -20%; width: 70px; height: 140%; transform: rotate(14deg); background: linear-gradient(90deg, transparent, #FF2E3E 30%, #FFE1E4 50%, #FF2E3E 70%, transparent); filter: blur(14px); opacity: .7; }
+.ev-poster.p-psyche::before { content: ""; position: absolute; z-index: 1; right: -30%; bottom: -30%; width: 90%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(210,241,105,.5), transparent 70%); filter: blur(18px); }
+.ev-poster .nx { width: 76px; height: 76px; border-radius: 50%; border: 3px solid #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .1em; color: #fff;
+  box-shadow: 0 0 4px #fff, 0 0 12px var(--nc, #FFD978), 0 0 28px var(--nc, #FFD978), inset 0 0 10px var(--nc, #FFD978); text-shadow: 0 0 10px var(--nc, #FFD978); }
+.pillar { border-radius: 14px; position: relative; overflow: hidden; isolation: isolate; }
+.pillar > * { position: relative; z-index: 2; }
+.pillar::after { content: ""; position: absolute; inset: 0; z-index: 1; opacity: .2; mix-blend-mode: overlay; background-image: var(--grain); }
+
+/* 杯數徽章：霓虹圈 */
+.coaster { background: transparent !important; border: 3px solid #fff; color: #fff;
+  box-shadow: 0 0 4px #fff, 0 0 14px var(--nc, #FFD978), 0 0 34px var(--nc, #FFD978), inset 0 0 14px var(--nc, #FFD978); text-shadow: 0 0 12px var(--nc, #FFD978); }
+
+/* 頁尾警語帶：Paper 底、Ink 字（官網是廣告落地頁，保留） */
+.warning { background: var(--paper); color: var(--ink-d); }
+
+/* index：場次海報塊的 NEXT 圈 */
+.ev-poster { justify-content: space-between; }
+@media (max-width: 760px) { .ev-poster .nx { width: 60px; height: 60px; font-size: 13px; } }
 </style>
 </head>
 <body>
@@ -222,12 +300,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
 </nav>
 
 <header class="hero" id="top">
-  <svg class="coasters" viewBox="0 0 360 360" aria-hidden="true">
-    <circle cx="250" cy="110" r="96" fill="none" stroke="#3a352e" stroke-width="2"/>
-    <circle cx="250" cy="110" r="72" fill="none" stroke="#3a352e" stroke-width="1"/>
-    <circle cx="140" cy="230" r="56" fill="#b3122e"/>
-    <circle cx="262" cy="262" r="40" fill="#3f6a26"/>
-  </svg>
+  <div class="hero-bg" aria-hidden="true"><div class="ph" style="background-image:url(assets/venue.jpg)"></div><div class="tint"></div><div class="lamp"></div></div>
   <div class="wrap hero-grid">
     <div>
       <img class="logo flicker" src="assets/logo.png" width="738" height="380" alt="Lectures by the glass 學術酒吧">
@@ -238,7 +311,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
         <a class="btn" href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener">追蹤 Instagram</a>
       </div>
     </div>
-    <aside class="next" id="nextBox" aria-label="下一場"></aside>
+    <aside class="next" id="nextBox" aria-label="下一杯"></aside>
   </div>
 </header>
 
@@ -277,7 +350,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
       <div class="promise">
         <div class="num">1<small>PAIRING</small></div>
         <h3>與主題呼應的酒</h3>
-        <p>每場依主題挑選搭配的酒，可能是紅酒、白酒，或為主題選的酒款。酒是話題與教材，不是主角；近期場次皆提供無酒精版本。</p>
+        <p>每場依主題挑選搭配的酒，酒款寫在各場次頁。酒是話題與教材，不是主角。</p>
       </div>
     </div>
     <div class="notlist">
@@ -291,7 +364,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Upcoming · 近期場次</p>
-      <h2 class="h2">下一個問題，在這裡開講</h2>
+      <h2 class="h2">下一杯，在這裡開講</h2>
     </div>
     <div class="events" id="eventList"></div>
   </div>
@@ -323,11 +396,11 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
     <div class="tl">
       <div class="tl-step"><div class="tl-time">0′<small>–15′</small></div><h3>入場，不用開口的破冰</h3><p>領一杯今天的酒，在匿名便利貼牆寫下一句話。</p></div>
       <div class="tl-step"><div class="tl-time">15′<small>–50′</small></div><h3>聽懂：硬知識</h3><p>講者用研究與數據，把一個問題講清楚。</p></div>
-      <div class="tl-step peak"><div class="tl-time">50′<small>–90′</small></div><h3>桌邊任務與揭曉</h3><p>以桌為單位做小實驗、比稿或盲測，用紅綠杯墊投票，再揭曉答案。</p></div>
-      <div class="tl-step"><div class="tl-time">90′<small>–120′</small></div><h3>最後一杯問題</h3><p>開放提問。講者從牆上挑幾張便利貼現場回答，合照，下一場見。</p></div>
+      <div class="tl-step peak"><div class="tl-time">50′<small>–90′</small></div><h3>桌邊任務與揭曉</h3><p>以桌為單位做小實驗、比稿或盲測，現場投票，再揭曉答案。</p></div>
+      <div class="tl-step"><div class="tl-time">90′<small>前後</small></div><h3>最後一杯問題</h3><p>開放提問。講者從牆上挑幾張便利貼現場回答，合照，下一場見。</p></div>
     </div>
     <div class="tl-bar" aria-hidden="true"><span style="flex:15;background:var(--line-strong)"></span><span style="flex:35;background:var(--ink-muted)"></span><span style="flex:40;background:var(--neon)"></span><span style="flex:30;background:var(--line-strong)"></span></div>
-    <div class="tl-cap" aria-hidden="true"><span>0 MIN</span><span>120 MIN</span></div>
+    <div class="tl-cap" aria-hidden="true"><span>0 MIN</span><span>90–120 MIN</span></div>
   </div>
 </section>
 
@@ -342,12 +415,12 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
 <section class="band" id="past">
   <div class="wrap past">
     <div>
-      <p class="eyebrow">Last rounds · 過去場次</p>
-      <h2 class="h2">第一場，35 席坐滿</h2>
+      <p class="eyebrow">Last glass · 上一杯</p>
+      <h2 class="h2">第 1 杯，35 席坐滿</h2>
       <p class="lede">七月的第一場，我們聊依附關係，現場的互動比我們預期的還熱烈。現場照片都放在 Instagram。</p>
     </div>
     <div class="past-card">
-      <div class="coaster p-psyche"><div><b>01</b><span>VOL.</span></div></div>
+      <div class="coaster"><div><b>01</b><span>GLASS</span></div></div>
       <div>
         <p class="stat">2026.07.04 · 35 / 35 SEATS</p>
         <h3>依附關係</h3>
@@ -365,10 +438,10 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
     </div>
     <div class="faq">
       <details><summary>我對主題不熟，也沒讀過相關的書，可以來嗎？</summary><p class="a">可以。每一場都是為「沒讀過也聽得懂」設計的，講者會從一個跟你有關的問題講起。有興趣，就夠了。</p></details>
-      <details><summary>我不喝酒，可以參加嗎？</summary><p class="a">可以。近期場次都提供無酒精版本，報名時可以選。酒是話題，不是門票。</p></details>
+      <details><summary>我不喝酒，可以參加嗎？</summary><p class="a">每一場的酒款都寫在場次頁。12/19 成人 ADHD 場可以選去醇葡萄酒；其他場次請以場次頁的說明為準。酒是話題，不是門票。</p></details>
       <details><summary>喝到喜歡的酒，想多嚐一些怎麼辦？</summary><p class="a">歡迎洽詢現場工作人員，可以了解當天酒款的資訊，或在現場加購。</p></details>
       <details><summary>一個人去會不會很尷尬？</summary><p class="a">很多人是一個人來的。現場以桌為單位安排，破冰用匿名便利貼，不需要先開口；所有互動都可以選擇不參加。</p></details>
-      <details><summary>票買了可以退嗎？</summary><p class="a">依各場報名頁的規定。目前票券售出後不接受退換或延用；若無法出席，可以轉讓給親友，請在活動前私訊 IG 告知更名資訊。</p></details>
+      <details><summary>票買了可以退嗎？</summary><p class="a">可以。活動開始前，都可以直接在報名網站申請取消與退費。</p></details>
       <details><summary>可以開發票或收據嗎？</summary><p class="a">目前報名費不提供收據或發票，有報帳需求請在報名前評估。之後若有調整，會寫在各場報名頁。</p></details>
       <details><summary>有年齡限制嗎？現場會拍照嗎？</summary><p class="a">活動有提供酒精飲品，未滿 18 歲請勿報名。活動全程會攝影紀錄，畫面可能用於品牌社群；不想入鏡可以在現場告訴工作人員。</p></details>
     </div>
@@ -420,18 +493,18 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 0; }
 var IG = "https://www.instagram.com/lectures_bytheglass/";
 var EVENTS = [
   {
-    vol: "03", series: "教授開講", pillar: "canon", pillarName: "禁忌、文學與歷史",
+    label: "NEXT", series: "教授開講", pillar: "canon", pillarName: "禁忌、文學與歷史",
     date: "12.12", day: "SAT", time: "14:00", theme: "情色時代",
     question: "誰在出價，誰被標價？一起讀被禁四百年的《金瓶梅》",
     speaker: "胡衍南", speakerTitle: "臺灣師範大學國文學系教授",
-    highlights: ["不用讀過：開場 3 分鐘看懂西門府誰是誰", "帶著一個角色的視角，聽西門慶、潘金蓮、如意兒三個人的交換", "教授帶讀原文（含情慾描寫），中間穿插互動，結尾小組討論"],
-    priceMain: "999", priceNote: "早鳥 999 元（11/22 前）・原價 1,199 元<br>雙場聯票另有優惠・限 18 歲以上・含一杯葡萄酒（也有無酒精版本）",
+    highlights: ["不用讀過：開場 3 分鐘看懂西門府誰是誰", "帶著一個角色的視角，聽西門慶、潘金蓮、如意兒三個人的交換", "教授帶你一起讀書裡的段落，中間穿插互動，結尾小組討論"],
+    priceMain: "999", priceNote: "早鳥 999 元（11/22 前）・原價 1,199 元<br>雙場聯票另有優惠・限 18 歲以上・含一杯葡萄酒",
     status: "即將開賣", url: null, page: "jinpingmei.html"
   },
   {
-    vol: "04", series: "專家開講", pillar: "psyche", pillarName: "關係與心理",
+    label: "NEXT", series: "專家開講", pillar: "psyche", pillarName: "關係與心理",
     date: "12.19", day: "SAT", time: "14:00", theme: "被誤會的大腦",
-    question: "為什麼他（或我）很努力，看起來卻像不夠努力？聊聊成人 ADHD",
+    question: "為什麼我明明很努力，看起來卻像不夠努力？聊聊成人 ADHD",
     speaker: "陳瑜慧", speakerTitle: "諮商心理師、藝術治療師，華昕藝心心理諮商所所長", speakerUrl: "https://www.hua-sin.com/therapist?id=1",
     highlights: ["不用確診，也不會被診斷：可以為自己來，也可以為身邊的人來", "帶走一份國際通用的篩檢量表，聽心理師告訴你怎麼讀它", "匿名問題牆與雙視角桌邊任務，不用開口也能參與"],
     priceMain: "999", priceNote: "早鳥 999 元（12/5 前）・原價 1,199 元<br>雙場聯票另有優惠・含一杯紅酒、白酒或去醇葡萄酒",
@@ -448,10 +521,10 @@ function cta(ev){
 document.getElementById("eventList").innerHTML = EVENTS.map(function(ev){
   var hl = ev.highlights.length ? '<ul class="ev-hl">' + ev.highlights.map(function(h){ return "<li>" + esc(h) + "</li>"; }).join("") + "</ul>" : "";
   return '<article class="ev">' +
-    '<div class="ev-poster p-' + ev.pillar + '"><div><div class="volk">VOL.</div><div class="vol">' + ev.vol + '</div></div><div class="theme">' + esc(ev.theme) + '</div></div>' +
+    '<div class="ev-poster p-' + ev.pillar + '" style="--nc:' + (ev.pillar === "psyche" ? "#D2F169" : "#FFD978") + '"><div class="nx">' + esc(ev.label) + '</div><div class="theme">' + esc(ev.theme) + '</div></div>' +
     '<div class="ev-body">' +
       '<div class="tags"><span class="tag dot t-' + ev.pillar + '">' + esc(ev.pillarName) + '</span><span class="tag state">' + esc(ev.status) + '</span></div>' +
-      '<div class="ev-meta">VOL.' + ev.vol + ' · ' + ev.date + ' ' + ev.day + ' ' + ev.time + ' · DRIZZLE</div>' +
+      '<div class="ev-meta">NEXT GLASS · ' + ev.date + ' ' + ev.day + ' ' + ev.time + ' · DRIZZLE</div>' +
       '<h3 class="ev-q">' + (ev.page ? '<a href="' + esc(ev.page) + '">' + esc(ev.question) + '</a>' : esc(ev.question)) + '</h3>' +
       '<p class="ev-spk"><b>' + (ev.speakerUrl ? '<a href="' + esc(ev.speakerUrl) + '" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px">' + esc(ev.speaker) + '</a>' : esc(ev.speaker)) + '</b>・' + esc(ev.speakerTitle) + '</p>' + hl +
       '<div class="ev-foot"><p class="price">' + (ev.priceMain ? "<b>NT$" + ev.priceMain + "</b>起<br>" : "") + ev.priceNote + '</p><div class="ev-actions">' + (ev.page ? '<a class="btn" href="' + esc(ev.page) + '">看場次介紹</a>' : '') + cta(ev) + '</div></div>' +
@@ -460,7 +533,7 @@ document.getElementById("eventList").innerHTML = EVENTS.map(function(ev){
 
 var nx = EVENTS[0];
 document.getElementById("nextBox").innerHTML =
-  '<span class="k">Next round · 下一場</span>' +
+  '<span class="k">Next glass · 下一杯</span>' +
   '<span class="when">' + nx.date + ' <span style="font-size:18px;letter-spacing:.14em;color:var(--ink-muted)">' + nx.day + ' ' + nx.time + '</span></span>' +
   '<span class="q">' + esc(nx.question) + '</span>' +
   '<span class="muted" style="font-size:14px">' + esc(nx.speaker) + '・Drizzle by Fourplay</span>' +
@@ -470,7 +543,7 @@ document.getElementById("nextBox").innerHTML =
 var open = EVENTS.filter(function(e){ return e.url; })[0];
 if (open) {
   [document.getElementById("floatCta"), document.getElementById("heroCta")].forEach(function(a){
-    a.href = open.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "報名 Vol." + open.vol;
+    a.href = open.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "報名 " + open.date.replace(".", "/");
   });
 }
 
