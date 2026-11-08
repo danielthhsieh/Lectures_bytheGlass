@@ -139,6 +139,9 @@ p { margin: 0; }
 @media (max-width: 520px) { .pillars { grid-template-columns: minmax(0, 1fr); } .pillar { min-height: 0; } }
 
 /* timeline */
+.ways-k { font-family: var(--display); font-size: 13px; letter-spacing: .16em; color: var(--neon); }
+.ways-peak { border-color: var(--neon) !important; box-shadow: 0 0 24px rgba(255,217,120,.14); }
+.ways-sub { font-family: var(--serif); font-weight: 700; font-size: 20px; margin: 48px 0 18px; }
 .tl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--line); }
 .tl-step { position: relative; padding: 28px 24px 0 0; display: grid; gap: 10px; align-content: start; }
 .tl-step::before { content: ""; position: absolute; left: 0; top: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--neon); }
@@ -334,7 +337,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     <div class="sec-head">
       <p class="eyebrow">About · 我們是誰</p>
       <h2 class="h2">一間讓專家走下講台的小型知識酒館</h2>
-      <p class="lede">每個月一場、90 到 120 分鐘。先聽懂，再說真話。你帶走一個能用來理解自己、關係或世界的新觀點，和一個能延續到晚餐的話題。</p>
+      <p class="lede">每個月一場、90 到 120 分鐘。聽懂一件事，也親身參與一次。你帶走一個能用來理解自己、關係或世界的新觀點，和一個能延續到晚餐的話題。</p>
     </div>
     <div class="promises">
       <div class="promise">
@@ -390,24 +393,27 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">One night · 一場怎麼進行</p>
-      <h2 class="h2">先硬後軟：一杯酒的時間軸</h2>
-      <p class="lede">知識放前半，討論和遊戲放後半。每一場都有一個揭曉的時刻，和一個敢說真話的時刻。</p>
+      <h2 class="h2">不只是聽一場講座</h2>
+      <p class="lede">每一場都有領域專家完整的分享，也有一段為這個主題設計的互動。互動放在哪裡、用什麼形式，每一場都不一樣：可能穿插在講座中間，可能藏在你手上的那杯酒裡，也可能請你離開座位、走到台前。</p>
     </div>
-    <div class="tl">
-      <div class="tl-step"><div class="tl-time">0′<small>–15′</small></div><h3>入場，不用開口的破冰</h3><p>領一杯今天的酒，在匿名便利貼牆寫下一句話。</p></div>
-      <div class="tl-step"><div class="tl-time">15′<small>–50′</small></div><h3>聽懂：硬知識</h3><p>講者用研究與數據，把一個問題講清楚。</p></div>
-      <div class="tl-step peak"><div class="tl-time">50′<small>–90′</small></div><h3>桌邊任務與揭曉</h3><p>以桌為單位做小實驗、比稿或盲測，現場投票，再揭曉答案。</p></div>
-      <div class="tl-step"><div class="tl-time">90′<small>前後</small></div><h3>最後一杯問題</h3><p>開放提問。講者從牆上挑幾張便利貼現場回答，合照，下一場見。</p></div>
+    <div class="promises">
+      <div class="promise"><span class="ways-k">LISTEN · 聽</span><h3>講者把一個問題講清楚</h3><p>領域專家用研究、文本或實務經驗，帶你看懂一個跟你有關的問題。</p></div>
+      <div class="promise ways-peak"><span class="ways-k">TAKE PART · 參與</span><h3>為這個主題設計的互動</h3><p>投票、角色、小實驗或桌邊討論，形式每場不同，有時也會用上當天的酒和這個空間。所有互動都可以選擇不參加。</p></div>
+      <div class="promise"><span class="ways-k">ASK · 問</span><h3>把問題留給你</h3><p>每一場都留時間開放提問。在一杯酒的距離，問講者那個放在心裡很久的問題。</p></div>
     </div>
-    <div class="tl-bar" aria-hidden="true"><span style="flex:15;background:var(--line-strong)"></span><span style="flex:35;background:var(--ink-muted)"></span><span style="flex:40;background:var(--neon)"></span><span style="flex:30;background:var(--line-strong)"></span></div>
-    <div class="tl-cap" aria-hidden="true"><span>0 MIN</span><span>90–120 MIN</span></div>
+    <p class="ways-sub">每一場的互動，長得都不一樣</p>
+    <div class="promises">
+      <div class="promise"><span class="ways-k">GLASS NO.01 · 依附關係</span><h3>蒙眼，拉一條繩子</h3><p>講座進行到一半，我們邀請聽眾上台，和講者各握繩子一端、蒙上眼睛，親身感受關係裡一方追、一方逃的拉扯。</p></div>
+      <div class="promise"><span class="ways-k">NEXT · 12.12《金瓶梅》</span><h3>帶著一個角色走進小說</h3><p>你會站在書中某一個人的位置，用他或她的眼睛聽故事。講座中間穿插投票與桌邊討論，同一個問題問兩次，看看你的答案會不會變。</p></div>
+      <div class="promise"><span class="ways-k">NEXT · 12.19 成人 ADHD</span><h3>和心理師一起設計中</h3><p>這一場的互動，正在和講者一起打磨。定案後，會寫在場次頁上。</p></div>
+    </div>
   </div>
 </section>
 
 <section class="band" style="background:var(--bg-raised)">
   <div class="wrap letter">
     <p class="eyebrow" style="margin-bottom:24px">House rules · 開場前我們會說</p>
-    <blockquote>今天這裡可以問<span>笨問題</span>，也可以只聽不說；<br>會有小實驗，可以不參加。</blockquote>
+    <blockquote>今天這裡可以問<span>笨問題</span>，也可以只聽不說；<br>會有互動，可以不參加。</blockquote>
     <p class="sig">每一場都從這句話開始。你可以只是坐著喝完一杯，也可以舉手問講者那個放在心裡很久的問題。</p>
   </div>
 </section>
@@ -438,9 +444,9 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     </div>
     <div class="faq">
       <details><summary>我對主題不熟，也沒讀過相關的書，可以來嗎？</summary><p class="a">可以。每一場都是為「沒讀過也聽得懂」設計的，講者會從一個跟你有關的問題講起。有興趣，就夠了。</p></details>
-      <details><summary>我不喝酒，可以參加嗎？</summary><p class="a">每一場的酒款都寫在場次頁。12/19 成人 ADHD 場可以選去醇葡萄酒；其他場次請以場次頁的說明為準。酒是話題，不是門票。</p></details>
+      <details><summary>我不喝酒，可以參加嗎？</summary><p class="a">每一場的酒款都寫在場次頁。12/12《金瓶梅》場有 Drizzle 調製的無酒精特調，12/19 成人 ADHD 場可以選去醇葡萄酒；其他場次請以場次頁的說明為準。酒是話題，不是門票。</p></details>
       <details><summary>喝到喜歡的酒，想多嚐一些怎麼辦？</summary><p class="a">歡迎洽詢現場工作人員，可以了解當天酒款的資訊，或在現場加購。</p></details>
-      <details><summary>一個人去會不會很尷尬？</summary><p class="a">很多人是一個人來的。現場以桌為單位安排，破冰用匿名便利貼，不需要先開口；所有互動都可以選擇不參加。</p></details>
+      <details><summary>一個人去會不會很尷尬？</summary><p class="a">很多人是一個人來的。現場以桌為單位安排，每一場的互動都設計成不用先開口也能參與，而且都可以選擇不參加。</p></details>
       <details><summary>票買了可以退嗎？</summary><p class="a">可以。活動開始前，都可以直接在報名網站申請取消與退費。</p></details>
       <details><summary>可以開發票或收據嗎？</summary><p class="a">目前報名費不提供收據或發票，有報帳需求請在報名前評估。之後若有調整，會寫在各場報名頁。</p></details>
       <details><summary>有年齡限制嗎？現場會拍照嗎？</summary><p class="a">活動有提供酒精飲品，未滿 18 歲請勿報名。活動全程會攝影紀錄，畫面可能用於品牌社群；不想入鏡可以在現場告訴工作人員。</p></details>
@@ -497,8 +503,8 @@ var EVENTS = [
     date: "12.12", day: "SAT", time: "14:00", theme: "情色時代",
     question: "誰在出價，誰被標價？一起讀被禁四百年的《金瓶梅》",
     speaker: "胡衍南", speakerTitle: "臺灣師範大學國文學系教授",
-    highlights: ["不用讀過：開場 3 分鐘看懂西門府誰是誰", "帶著一個角色的視角，聽西門慶、潘金蓮、如意兒三個人的交換", "教授帶你一起讀書裡的段落，中間穿插互動，結尾小組討論"],
-    priceMain: "999", priceNote: "早鳥 999 元（11/22 前）・原價 1,199 元<br>雙場聯票另有優惠・限 18 歲以上・含一杯葡萄酒",
+    highlights: ["不用讀過：開場 3 分鐘看懂西門府誰是誰", "帶著一個角色的視角，聽西門慶、潘金蓮、如意兒三個人的交換", "教授帶你一起讀書裡的段落，中間穿插投票與兩段桌邊討論"],
+    priceMain: "999", priceNote: "早鳥 999 元（11/22 前）・原價 1,199 元<br>雙場聯票另有優惠・限 18 歲以上・含一杯葡萄酒（也有無酒精特調）",
     status: "即將開賣", url: null, page: "jinpingmei.html"
   },
   {
