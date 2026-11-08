@@ -155,7 +155,7 @@ p { margin: 0; }
 @media (max-width: 760px) { .speaker { grid-template-columns: minmax(0, 1fr); gap: 32px; } .speaker .coaster { width: 220px; } .speaker .coaster b { font-size: 64px; } }
 
 /* tickets */
-.tickets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.tickets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .ticket { background: var(--bg-raised); padding: 24px; display: grid; gap: 6px; align-content: start; border: 2px solid transparent; }
 .ticket.best { border-color: var(--neon); }
 .ticket .k { font-size: 14px; font-weight: 700; color: var(--ink-muted); }
@@ -309,7 +309,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     <div class="chips">
       <span class="chip key">不用確診，也不會被診斷</span>
       <span class="chip key">可以為身邊的人而來</span>
-      <span class="chip">不用開口也能參與</span>
+      <span class="chip">所有互動都可以不參加</span>
       <span class="chip">專家講座・90 分鐘</span>
       <span class="chip">只開 35 席</span>
       <span class="chip">一杯紅酒、白酒或去醇葡萄酒</span>
@@ -341,7 +341,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
         <h3>你一直覺得他不夠努力，也許他已經很努力</h3>
         <p>伴侶、孩子、家人或好友身上，有些行為你一直看不懂。你不一定有症狀，但你想理解，不想再只是生氣。</p>
         <p class="q">「我該怎麼理解他，而不是一直氣他？」</p>
-        <p class="take"><b>你會帶走</b>一張「大腦說明書」，和一張陪伴者對話卡：怎麼開口、怎麼陪、哪些話先不要說。</p>
+        <p class="take"><b>你會聽到</b>心理師從陪伴者的角度談：怎麼理解對方、怎麼開口、哪些話先不要說。</p>
       </article>
     </div>
     <p class="also">只是好奇也很歡迎。這場不是要替誰貼標籤，而是讓同一張桌子上的人，聽見彼此的版本。</p>
@@ -353,11 +353,11 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     <div class="sec-head">
       <p class="eyebrow">House rules</p>
       <h2 class="h2">開場前，我們會先說好三件事</h2>
-      <p class="lede">《金瓶梅》那一場要你扮演一個角色；這一場剛好相反，你什麼都不用演。</p>
+      <p class="lede">這一場的互動還在設計中，但不論最後是什麼形式，這三件事都不會變。</p>
     </div>
     <div class="pacts">
       <div class="pact"><span class="n">01</span><h3>今天沒有人會被診斷</h3><p>診斷由精神科醫師做，需要完整的病史與評估。這場只陪你走到「第 0 步」：理解、自我觀察，以及決定要不要去看。</p></div>
-      <div class="pact"><span class="n">02</span><h3>你的量表結果，只有你看得到</h3><p>紙筆自評、自己計分。我們不收回、不舉手、不統計，也不用線上表單。</p></div>
+      <div class="pact"><span class="n">02</span><h3>你的量表結果，只有你看得到</h3><p>量表是給你自己用的。我們不收回、不舉手、不統計，也不用線上表單。</p></div>
       <div class="pact"><span class="n">03</span><h3>可以只聽不說，也可以隨時起身</h3><p>所有互動都可以不參加。起身走動、上廁所、續杯，全程都可以，不用等下課。</p></div>
     </div>
   </div>
@@ -367,17 +367,14 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">How it flows</p>
-      <h2 class="h2">90 分鐘，每 10 到 15 分鐘換一種參與方式</h2>
-      <p class="lede">不設中場休息，改成讓「換一件事做」本身就是休息。每個環節開始時主持人都會提醒，手上的小冊也印好了議程，注意力飄走了，隨時接得回來。</p>
-      <div class="modes" aria-label="參與方式的順序"><span>聽</span><i>→</i><span>投票</span><i>→</i><span>動手</span><i>→</i><span>寫</span><i>→</i><span>聊</span><i>→</i><span>問</span></div>
+      <h2 class="h2">90 分鐘，聽、參與、問</h2>
+      <p class="lede">和每一場一樣，這一場有心理師完整的分享，也有一段為這個主題設計的互動，最後留時間給你提問。互動的形式正在和陳瑜慧心理師一起打磨，定案後會更新在這一頁。</p>
+      <div class="modes" aria-label="一場的三個部分"><span>聽</span><i>→</i><span>參與</span><i>→</i><span>問</span></div>
     </div>
     <ol class="steps">
-      <li><span class="n">00</span><b>入場｜匿名問題牆</b><span>領一杯飲品和一本「使用說明書」小冊，在便利貼上寫下「我一直沒搞懂的一件事」。</span></li>
-      <li><span class="n">01</span><b>聽懂｜確診潮與大人的隱性 ADHD</b><span>為什麼現在大家都在談？為什麼大人、尤其是女性，更難被發現？中間穿插「迷思或事實」投票。</span></li>
-      <li><span class="n">02</span><b>動手｜注意力小實驗</b><span>全場一起做一個小實驗，體會「每個人的注意力都有漏洞，差別在頻率與代價」。</span></li>
-      <li><span class="n">03</span><b>寫｜量表與大腦說明書</b><span>先看懂篩檢和診斷的差別，再自評一份 6 題量表，由心理師逐題解讀；接著寫一頁「我的大腦說明書」。</span></li>
-      <li><span class="n">04</span><b>聊｜雙視角桌邊任務</b><span>同一個情境，一半人寫「那一刻我心裡在想什麼」，一半人寫「那一刻我想說什麼」，不署名、同桌交換讀。</span></li>
-      <li><span class="n">05</span><b>問｜陪伴一顆不一樣的大腦</b><span>給自己的調整，以及給伴侶、家人的「怎麼開口、怎麼不幫倒忙」。最後從問題牆挑題，現場回答。</span></li>
+      <li><span class="n">01</span><b>聽｜心理師把成人 ADHD 講清楚</b><span>為什麼最近大家都在談？為什麼大人更難被發現？篩檢和診斷差在哪裡，身邊的人又可以怎麼陪？</span></li>
+      <li><span class="n">02</span><b>參與｜和心理師一起設計中</b><span>這一場的互動正在和講者一起打磨，定案後會寫在這裡。不論形式，都不需要分享自己的狀況，也都可以選擇不參加。</span></li>
+      <li><span class="n">03</span><b>問｜把問題留給你</b><span>留時間開放提問。在一杯酒的距離，問心理師那個放在心裡很久的問題。</span></li>
     </ol>
   </div>
 </section>
@@ -394,14 +391,14 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
       <tbody>
         <tr><th scope="row">誰做</th><td data-k="正式診斷">精神科（身心科）醫師下診斷，臨床心理師做衡鑑</td><td class="us" data-k="這一場">諮商心理師解說，你自己觀察</td></tr>
         <tr><th scope="row">對象</th><td data-k="正式診斷">一個人，完整個案</td><td class="us" data-k="這一場">35 個人，沒有人是個案</td></tr>
-        <tr><th scope="row">用到什麼</th><td data-k="正式診斷">會談、量表、注意力測驗、鑑別檢查，以及童年病史與家人觀察</td><td class="us" data-k="這一場">一份 6 題篩檢量表，加一頁反思頁</td></tr>
+        <tr><th scope="row">用到什麼</th><td data-k="正式診斷">會談、量表、注意力測驗、鑑別檢查，以及童年病史與家人觀察</td><td class="us" data-k="這一場">一份國際通用的篩檢量表，加上心理師的講解</td></tr>
         <tr><th scope="row">得到什麼</th><td data-k="正式診斷">診斷（或排除）與治療計畫</td><td class="us" data-k="這一場">「要不要去看」的判斷，和就診前的準備清單</td></tr>
         <tr><th scope="row">花多久</th><td data-k="正式診斷">數次門診與衡鑑</td><td class="us" data-k="這一場">90 分鐘</td></tr>
       </tbody>
     </table>
     <div class="scale-note">
       <div><b>現場不替任何人解讀分數</b>問答時也一樣。如果你拿著分數想問，心理師會告訴你可以怎麼帶著它去問醫師。</div>
-      <div><b>為身邊的人而來的你</b>可以寫一份「他的大腦說明書（我的猜想）」帶回去和對方對照，但量表只能由本人自己填。</div>
+      <div><b>為身邊的人而來的你</b>量表只能由本人自己填。你可以把它帶回去，再邀請對方自己看看。</div>
     </div>
   </div>
 </section>
@@ -410,12 +407,12 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Take home</p>
-      <h2 class="h2">離場時，你手上會有三樣東西</h2>
+      <h2 class="h2">離場時，你可以帶走</h2>
     </div>
     <div class="takes">
-      <article class="take-card"><span class="k">FOR MYSELF</span><h3>「下一步」資源卡</h3><p>量表的分流圖、台北就醫與諮商窗口，以及「就醫前可以帶什麼」的清單。</p></article>
-      <article class="take-card"><span class="k">FOR SOMEONE</span><h3>陪伴者對話卡</h3><p>三句可以說的話、三句先不要說的話，和怎麼邀請對方自己填量表。</p></article>
-      <article class="take-card"><span class="k">FOR EVERYONE</span><h3>你自己寫的小冊</h3><p>議程、量表、你的大腦說明書與筆記，加上講者推薦的延伸書單。</p></article>
+      <article class="take-card"><span class="k">FOR MYSELF</span><h3>一個「下一步」的判斷</h3><p>一份篩檢量表和心理師的解讀：什麼情況值得去看、去之前可以準備什麼。</p></article>
+      <article class="take-card"><span class="k">FOR SOMEONE</span><h3>陪伴的方法</h3><p>怎麼理解對方、怎麼開口、哪些話先不要說，以及怎麼邀請對方自己填量表。</p></article>
+      <article class="take-card"><span class="k">FOR EVERYONE</span><h3>一個被回答的問題</h3><p>帶著放在心裡很久的那個問題來，在開放提問時間直接問心理師。</p></article>
     </div>
   </div>
 </section>
@@ -444,7 +441,6 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
       <div class="ticket best"><span class="k">單場早鳥・12/5 前</span><span class="price">999<small>元</small></span><span class="d">12/19 成人 ADHD 場；12/6 起原價 1,199 元</span></div>
       <div class="ticket"><span class="k">雙場聯票早鳥・11/22 前</span><span class="price">1,999<small>元</small></span><span class="d">加 12/12《金瓶梅》場；11/23–12/11 為 2,199 元</span></div>
       <div class="ticket"><span class="k">升級聯票</span><span class="price">900<small>元</small></span><span class="d">已買《金瓶梅》場者補差價，12/12 現場至 12/14</span></div>
-      <div class="ticket"><span class="k">團體價・4 人以上</span><span class="price">899<small>元</small></span><span class="d">每人，限合作團體專屬碼</span></div>
     </div>
     <p class="fine">活動開始前皆可申請取消與退費。本活動是講座，不提供診斷或治療。提供酒精飲品，未滿 18 歲請勿報名。</p>
     <div class="signup-row">
@@ -463,8 +459,9 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     <div class="faq">
       <details><summary>我沒有確診，也不確定自己是不是，可以來嗎？</summary><p class="a">可以，這場就是為「還不確定」的人設計的。你不需要確診，也不需要分享自己的狀況。</p></details>
       <details><summary>現場會幫我判斷是不是 ADHD 嗎？</summary><p class="a">不會。在台灣，成人 ADHD 的正式診斷由精神科（身心科）醫師做。這場會帶你看懂篩檢量表、了解正式評估怎麼進行，幫你決定要不要去看、去之前可以準備什麼。</p></details>
-      <details><summary>我是為伴侶、孩子或家人來的，適合嗎？</summary><p class="a">適合。大約一半的內容是給陪伴者的：怎麼理解對方、怎麼開口、哪些話先不要說。現場也有為「身邊的人」設計的桌邊任務與對話卡。</p></details>
-      <details><summary>一定要分享自己的事嗎？</summary><p class="a">不用。提問可以寫在匿名問題牆，桌邊任務的小卡也不署名、不強迫念出來。你可以全程只聽不說。</p></details>
+      <details><summary>我是為伴侶、孩子或家人來的，適合嗎？</summary><p class="a">適合。這一場有一部分內容是給陪伴者的：怎麼理解對方、怎麼開口、哪些話先不要說。</p></details>
+      <details><summary>現場會有什麼互動？</summary><p class="a">互動的形式正在和陳瑜慧心理師一起設計，定案後會更新在這一頁，也會在 Instagram 公布。可以先確定的是：所有互動都可以選擇不參加。</p></details>
+      <details><summary>一定要分享自己的事嗎？</summary><p class="a">不用。不論互動最後是什麼形式，都不需要分享自己的狀況。你可以全程只聽不說。</p></details>
       <details><summary>正在服藥或不喝酒，可以參加嗎？</summary><p class="a">可以。服藥中或不喝酒的朋友，可以選擇去醇葡萄酒，杯子和介紹方式都和紅白酒一樣，體驗完全相同。</p></details>
       <details><summary>上週去過《金瓶梅》場，還能加買這一場嗎？</summary><p class="a">可以。12/12 現場到 12/14，已買《金瓶梅》場的朋友補 900 元就能升級成雙場聯票。歡迎回來。</p></details>
       <details><summary>票買了可以退嗎？</summary><p class="a">可以。活動開始前，都可以直接在報名網站申請取消與退費。</p></details>
@@ -489,8 +486,8 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
 
 <footer>
   <div class="wrap foot">
-    <a href="index.html" aria-label="回到學術酒吧首頁"><img class="logo-s" src="assets/logo.png" width="738" height="380" alt="Lectures by the glass 學術酒吧"></a>
-    <span>學術酒吧 Lecture by the Glass · 把專家請進酒吧，把問題留給你。</span>
+    <a href="index.html" aria-label="回到學術酒吧首頁"><img class="logo-s" src="assets/logo.png" width="738" height="380" alt="Lectures by the Glass 學術酒吧"></a>
+    <span>學術酒吧 Lectures by the Glass · 把專家請進酒吧，把問題留給你。</span>
     <a href="index.html">← 回首頁</a>
   </div>
   <div class="warning" role="note"><span>禁止酒駕</span><i aria-hidden="true"></i><span>飲酒過量，有害健康</span></div>

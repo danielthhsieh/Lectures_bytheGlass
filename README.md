@@ -1,4 +1,4 @@
-# 學術酒吧 Lecture by the Glass 官網
+# 學術酒吧 Lectures by the Glass 官網
 
 純靜態網站（HTML＋CSS＋少量 JS），不需要 build。部署目標：GitHub → Vercel。
 
