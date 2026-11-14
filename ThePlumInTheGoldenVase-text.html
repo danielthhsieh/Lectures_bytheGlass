@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>今天的原文｜《金瓶梅》場｜學術酒吧 Lectures by the Glass</title>
+<meta name="description" content="學術酒吧 12/12《金瓶梅》場的現場原文與人物關係，給到場觀眾在手機上跟著讀。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Oswald:wght@500;600&display=swap">
+<style>body{margin:0} [hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: one reading column for a phone held in a dim bar; sticky chapter bar; passages titled exactly as projected. Single dark look on purpose (low light). */
+:root {
+  --bg: #0e0c0a;
+  --panel: #191613;
+  --line: #2f2a24;
+  --fg: #ebe3d4;
+  --muted: #a39887;
+  --gold: #e8d38a;
+  --red: #ff7a85;
+  --green: #8fc277;
+  --serif: 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
+  --sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --label: 'Oswald', 'Noto Sans TC', sans-serif;
+  --fs: 1.125rem;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 112px); }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 40rem; margin: 0 auto;
+  padding-left: max(18px, env(safe-area-inset-left, 0px));
+  padding-right: max(18px, env(safe-area-inset-right, 0px));
+}
+.intro { padding-block: 36px 28px; display: flex; flex-direction: column; gap: 14px; }
+.brand { text-decoration: none; font-family: var(--label); font-size: 0.75rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
+.intro .series { font-family: var(--serif); font-weight: 700; font-size: 1.05rem; color: var(--red); margin: 0; }
+.intro h1 { font-family: var(--serif); font-weight: 900; font-size: 2.1rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+.intro p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+.intro .warn { font-size: 0.85rem; padding-top: 12px; border-top: 1px solid var(--line); }
+
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.bar .wrap { display: flex; align-items: center; gap: 4px; padding-block: 10px; }
+.fsrow { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.85rem; }
+.tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs a {
+  flex: 1 0 auto; justify-content: center; text-decoration: none; color: var(--muted);
+  font-size: 0.85rem; font-weight: 500; padding: 8px 9px; min-height: 40px;
+  display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid var(--line);
+}
+.tabs a.on { color: var(--bg); background: var(--gold); border-color: var(--gold); font-weight: 700; }
+.size { display: flex; gap: 2px; flex: none; }
+.size button {
+  width: 36px; height: 40px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--fg); font-family: var(--serif); font-weight: 700; cursor: pointer;
+}
+.size button:disabled { opacity: 0.35; cursor: default; }
+.size .sm { font-size: 0.8rem; } .size .lg { font-size: 1.1rem; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+
+.map { gap: 18px; }
+.map .lede { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.hub { background: var(--panel); border: 2px solid var(--red); border-radius: 6px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.hub .role { font-family: var(--label); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--gold); }
+.hub .nm { font-family: var(--serif); font-weight: 900; font-size: 1.5rem; }
+.hub .ds { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.grp { display: flex; flex-direction: column; gap: 10px; }
+.grp h3 { margin: 0; font-size: 0.85rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; }
+.ppl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 560px) { .ppl { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.pp { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pp.key { border: 2px solid var(--red); }
+.pp .tag { font-size: 0.72rem; color: var(--muted); }
+.pp.key .tag { color: var(--red); }
+.pp .nm { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; line-height: 1.35; }
+.pp .ds { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+.legend { margin: 0; font-size: 0.78rem; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.legend i { width: 14px; height: 14px; border: 2px solid var(--red); border-radius: 3px; flex: none; }
+.chapter { padding-block: 36px 8px; display: flex; flex-direction: column; gap: 22px; }
+.ch-head { display: flex; flex-direction: column; gap: 4px; padding-bottom: 6px; }
+.ch-lab { font-family: var(--label); font-size: 0.8rem; letter-spacing: 0.2em; color: var(--red); }
+.ch-head h2 { margin: 0; font-family: var(--serif); font-weight: 900; font-size: 1.6rem; line-height: 1.3; text-wrap: balance; }
+
+.psg { background: var(--panel); border-radius: 6px; padding: 22px 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.kicker { font-family: var(--label); font-size: 0.82rem; letter-spacing: 0.08em; color: var(--red); min-width: 0; }
+.pno { font-family: var(--label); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
+.psg h3 { margin: 0; font-family: var(--serif); font-weight: 900; font-size: calc(var(--fs) * 1.2); line-height: 1.4; text-wrap: balance; display: flex; align-items: center; gap: 10px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.dot-a { background: var(--green); } .dot-b { background: var(--red); }
+.txt { margin: 0; font-family: var(--serif); font-size: var(--fs); line-height: 1.95; letter-spacing: 0.02em; }
+.txt b { color: var(--red); font-weight: 700; }
+.txt u { color: var(--red); text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 0.3em; text-decoration-thickness: 1px; }
+.legend-mark { font-size: 0.85rem; color: var(--muted); margin: 0; }
+.legend-mark b { color: var(--red); }
+.legend-mark u { color: var(--red); text-underline-offset: 0.3em; }
+.note, .comment { margin: 0; font-size: calc(var(--fs) * 0.88); line-height: 1.8; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); }
+.comment { font-family: var(--serif); color: var(--gold); }
+.comment + .comment { border-top: 0; padding-top: 0; }
+.cue { margin: 0; font-size: calc(var(--fs) * 0.85); color: var(--muted); }
+.turn { margin: 0; font-family: var(--serif); font-weight: 900; font-size: calc(var(--fs) * 1.15); color: var(--red); line-height: 1.5; }
+.poems { display: flex; flex-direction: column; gap: 16px; }
+.poem { display: grid; grid-template-columns: 2rem 1fr; gap: 10px; align-items: baseline; }
+.poem .pk { font-family: var(--serif); font-weight: 900; font-size: calc(var(--fs) * 1.2); color: var(--red); }
+.poem .txt { min-width: 0; }
+
+.after { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.after .ch-head h2 { font-size: 1.5rem; }
+.next { background: var(--panel); border: 2px solid var(--gold); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.next .when { font-family: var(--label); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--gold); }
+.next .ttl { margin: 0; font-family: var(--serif); font-weight: 900; font-size: 1.3rem; line-height: 1.4; }
+.next p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 20px; border-radius: 6px; font-weight: 700; font-size: 1rem; text-decoration: none; text-align: center; }
+.btn.primary { background: var(--gold); color: var(--bg); }
+.btn.ghost { border: 1px solid var(--line); color: var(--fg); background: var(--panel); }
+.links { display: flex; flex-direction: column; gap: 10px; }
+.end { padding-block: 40px 56px; text-align: center; color: var(--muted); font-size: 0.85rem; display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.end a { color: var(--gold); text-decoration: none; font-size: 0.9rem; padding: 10px 14px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="wrap intro">
+  <a class="brand" href="index.html">← Lectures by the Glass 學術酒吧</a>
+  <p class="series">情色時代</p>
+  <h1>誰在出價，誰被標價？</h1>
+  <p>今天投影上的原文都在這裡，每段的標題和投影畫面一樣。聽教授念的時候，可以在手機上跟著讀。</p>
+  <p class="legend-mark"><b>紅色粗體</b>和<u>紅色底線</u>：胡老師原簡報特別標出的句子，現場會特別講。</p>
+  <p class="warn">內容含古典小說中直白的情慾描寫。原文依講者簡報，文字與標點保留版本原貌。</p>
+  <div class="fsrow"><span>字級</span>
+    <div class="size" role="group" aria-label="字級">
+      <button type="button" class="sm" id="fs-down" aria-label="縮小字級">A−</button>
+      <button type="button" class="lg" id="fs-up" aria-label="放大字級">A+</button>
+    </div>
+  </div>
+</div>
+
+<nav class="bar" aria-label="章節">
+  <div class="wrap">
+    <div class="tabs" id="tabs">
+      <a href="#people" data-for="people">人物</a>
+      <a href="#open" data-for="open">開場</a>
+      <a href="#ch1" data-for="ch1">西門慶</a>
+      <a href="#ch2" data-for="ch2">潘金蓮</a>
+      <a href="#ch3" data-for="ch3">如意兒</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+<section class="chapter map" id="people" aria-labelledby="people-h">
+<header class="ch-head"><span class="ch-lab">人物關係</span><h2 id="people-h">西門府裡外，誰是誰</h2></header>
+<p class="lede">聽到名字對不上人時，回來這裡查。</p>
+<div class="hub"><span class="role">一家之主</span><span class="nm">西門慶</span><span class="ds">清河縣暴發戶，開生藥舖起家，後任提刑官</span></div>
+<div class="grp"><h3>妻妾・依進門順序</h3><div class="ppl"><div class="pp"><span class="tag">大娘</span><span class="nm">吳月娘</span><span class="ds">正妻・管家</span></div><div class="pp"><span class="tag">二娘</span><span class="nm">李嬌兒</span><span class="ds">妓院出身</span></div><div class="pp"><span class="tag">三娘</span><span class="nm">孟玉樓</span><span class="ds">有錢的寡婦</span></div><div class="pp"><span class="tag">四娘</span><span class="nm">孫雪娥</span><span class="ds">丫鬟收房</span></div><div class="pp key"><span class="tag">五娘</span><span class="nm">潘金蓮</span><span class="ds">被賣過兩次</span></div><div class="pp"><span class="tag">六娘</span><span class="nm">李瓶兒</span><span class="ds">帶著家產嫁入</span></div></div></div>
+<div class="grp"><h3>府裡的下一代與僕人</h3><div class="ppl"><div class="pp"><span class="tag">女兒</span><span class="nm">西門大姐</span><span class="ds">西門慶與前妻之女</span></div><div class="pp"><span class="tag">女婿</span><span class="nm">陳經濟</span><span class="ds">西門大姐的丈夫，寄住府中</span></div><div class="pp"><span class="tag">丫鬟</span><span class="nm">龐春梅</span><span class="ds">潘金蓮房裡的丫鬟</span></div><div class="pp"><span class="tag">家僕之妻</span><span class="nm">宋蕙蓮</span><span class="ds">家僕來旺的妻子</span></div><div class="pp"><span class="tag">兒子</span><span class="nm">官哥</span><span class="ds">李瓶兒所生</span></div><div class="pp key"><span class="tag">奶媽</span><span class="nm">如意兒</span><span class="ds">官哥的奶媽</span></div></div></div>
+<div class="grp"><h3>府外往來</h3><div class="ppl"><div class="pp"><span class="tag">朝中靠山</span><span class="nm">蔡太師</span><span class="ds">西門慶送禮換官</span></div><div class="pp"><span class="tag">頭號跟班</span><span class="nm">應伯爵</span><span class="ds">吃喝幫閒</span></div><div class="pp"><span class="tag">結拜兄弟</span><span class="nm">花子虛</span><span class="ds">李瓶兒的前夫</span></div><div class="pp"><span class="tag">開茶坊的鄰居</span><span class="nm">王婆</span><span class="ds">牽線西門慶與潘金蓮</span></div><div class="pp"><span class="tag">潘金蓮前夫</span><span class="nm">武大郎</span><span class="ds">遭毒死</span></div><div class="pp"><span class="tag">武大郎之弟</span><span class="nm">武松</span><span class="ds"></span></div></div></div>
+<p class="legend"><i aria-hidden="true"></i>紅框：今天的三位主角</p>
+</section>
+<section class="chapter" id="open" aria-labelledby="open-h">
+<header class="ch-head"><span class="ch-lab">開場</span><h2 id="open-h">古人怎麼看這本書</h2></header>
+<article class="psg" id="p6">
+<div class="meta"><span class="kicker">明・謝肇淛〈金瓶梅跋〉</span><span class="pno" title="簡報頁碼">P.6</span></div>
+<h3>明朝人怎麼形容這本書</h3>
+<p class="txt">《金瓶梅》一書，不著作者名代。相傳永陵中有金吾戚里，憑怙奢汰，淫縱無度，而其門客病之，採摭日逐行事，匯以成編，而托之西門慶也。書凡數百萬言，為卷二十，始末不過數年事耳。其中<u>朝野之政務，官私之晉接，閨闥之媟語，市里之猥談，與夫勢交利合之態，心輸背笑之局，桑中濮上之期，尊罍枕席之語，駔馬會之機械意智，粉黛之自媚爭妍，狎客之從諛逢迎，奴佁之稽唇淬語</u>，窮極境象，駴意快心。譬之範工搏泥，妍媸老少，人鬼萬殊，不徒肖其貌，且并其神傳之。信稗官之上乘，爐錘之妙手也。</p>
+</article>
+<article class="psg" id="p7">
+<div class="meta"><span class="kicker">清・滿文本《金瓶梅》序</span><span class="pno" title="簡報頁碼">P.7</span></div>
+<h3>一百回，就是一百個警戒</h3>
+<p class="txt">凡百回中以為百戒，每回無過<u>結交朋黨、鑽營勾串、流連會飲、淫黷通奸、貪婪索取、強橫欺凌、巧計誆騙、忿怒行兇、作樂無休、訛賴誣害、挑唆離間而已</u>，其于修身齊家、裨益于國之事一無所有。……將陋息編為萬世之戒，自常人之夫婦，以及僧道尼番、醫巫星相、卜術樂人、歌妓雜耍之徒，自買賣以及水陸諸物，自服用器皿以及謔浪笑談，于僻隅瑣屑毫無遺漏，其周詳備全，如親身眼前熟視歷經之彰也。誠可謂是書于四奇書之尤奇者矣。</p>
+</article>
+<article class="psg" id="p8">
+<div class="meta"><span class="kicker">明・東吳弄珠客〈金瓶梅序〉</span><span class="pno" title="簡報頁碼">P.8</span></div>
+<h3>明代序言怎麼分讀者</h3>
+<p class="txt">「讀《金瓶梅》而生憐憫心者，菩薩也；生畏懼心者，君子也；生歡喜心者，小人也；生效法心者，乃禽獸耳。」</p>
+</article>
+<article class="psg" id="p9">
+<div class="meta"><span class="kicker">清・張竹坡〈金瓶梅讀法〉</span><span class="pno" title="簡報頁碼">P.9</span></div>
+<h3>原來妖就是這般形象</h3>
+<p class="txt">西門慶是<b>混帳惡人</b>，吳月娘是奸險好人，玉樓是乖人，金蓮<b>不是人</b>，瓶兒是痴人，春梅是狂人，敬濟是浮浪小人，嬌兒是死人，雪娥是蠢人，宋蕙蓮是不識高低的人，如意兒是頂缺之人。若王六兒與林太太等，直與李桂姐輩一流，總是<b>不得叫做人</b>。而伯爵、希大輩，皆是<b>沒良心的人</b>。兼之蔡太師、蔡狀元、宋御史，皆是<b>枉為人</b>也。</p>
+</article>
+<article class="psg" id="p14">
+<div class="meta"><span class="kicker">《金瓶梅》四貪詞</span><span class="pno" title="簡報頁碼">P.14</span></div>
+<h3>書裡自己寫好的四首戒詞</h3>
+<div class="poems">
+<div class="poem"><span class="pk">酒</span><p class="txt"><b>酒</b>損精神破喪家，語言無狀鬧喧嘩。疏親慢友多由你，背義忘恩盡是他。切須戒，飲流霞。若能依此實無差。失卻萬事皆因此，今後逢賓只待茶。</p></div>
+<div class="poem"><span class="pk">色</span><p class="txt">休愛綠鬃美朱顔，少貪紅粉翠花鈿。損身害命多嬌態，傾國傾城<b>色</b>更鮮。莫戀此，養丹田。人能寡慾壽長年。從今罷卻閑風月，紙帳梅花獨自眠。</p></div>
+<div class="poem"><span class="pk">財</span><p class="txt">錢帛金珠籠內收，若非公道少貪求。親朋道義因<b>財</b>失，父子懷情為利休。急縮手，且抽頭。免使身心晝夜愁。兒孫自有兒孫福，莫與兒孫作遠憂。</p></div>
+<div class="poem"><span class="pk">氣</span><p class="txt">莫使強梁<b>逞</b>技能，揮拳捰袖弄精神。一時怒發無明穴，到後憂煎禍及身。莫太過，免災迍。勸君凡事放寬情。合撒手時須撒手，得饒人處且饒人。</p></div>
+</div>
+</article>
+</section>
+<section class="chapter" id="ch1" aria-labelledby="ch1-h">
+<header class="ch-head"><span class="ch-lab">第一章</span><h2 id="ch1-h">西門慶：出價的人</h2></header>
+<article class="psg" id="p19">
+<div class="meta"><span class="kicker">第 78 回 · 原文</span><span class="pno" title="簡報頁碼">P.19</span></div>
+<h3>已經擁有了，還要對方親口再說一次</h3>
+<p class="txt">西門慶便叫道：「章四兒淫婦，你是誰的老婆？」婦人道：「我是爹的老婆。」西門慶教與他：「你說是熊旺的老婆，今日屬了我的親達達了。」那婦人回應道：「淫婦原是熊旺的老婆，今日屬了我的親達達了！」西門慶又問道：「我會㒲不會？」婦人道：「達達會㒲屄。」兩個淫聲艷語，無般言語不說出來。</p>
+<p class="note">即便本就徹底擁有，仍要一再確認：他怕失去的不只是性能力，還有家裡的統治力，以及官場與商場的主宰力。</p>
+</article>
+<article class="psg" id="p21">
+<div class="meta"><span class="kicker">第 79 回 · 原文 1／11</span><span class="pno" title="簡報頁碼">P.21</span></div>
+<h3>宴席散了，他還攔著客人</h3>
+<p class="txt">西門慶自知淫人妻子，而不知死之將至。當日在夾道內奸耍了來爵老婆，走到卷棚內陪吳大舅、應伯爵、謝希大、常時節飲酒。荊統制娘子、張團練娘子、喬親家母、崔親家母、吳大姨、吳大妗子、段大姐坐了好一回，上罷元宵圓子，方才起身，告辭上轎家去了。大妗子那日，同吳舜臣媳婦，都家去了。陳經濟打發了王皇親戲子二兩銀子唱錢，酒食管待出門。只見四個唱的並小優，還在卷棚內彈唱遞酒。伯爵向西門慶說道：「明日花大哥生日，哥，你送了禮去不曾？」西門慶說道：「我早辰送過去了。」玳安道：「花大哥那裡頭裡使來定兒送請帖兒來了。」伯爵道：「哥，你明日去不去？我好來會你。」西門慶道：「到明日看，再不你先去罷，我慢慢兒去遞杯酒。」四個唱的後邊去了，李銘等上來彈唱。<b>西門慶不住只是在椅子上打睡</b>。吳大舅道：「姐夫連日辛苦了，罷罷，咱每告辭罷。」於是起身。那西門慶又不肯，只顧攔著留坐，到二更時分才散。</p>
+</article>
+<article class="psg" id="p22">
+<div class="meta"><span class="kicker">第 79 回 · 原文 2／11</span><span class="pno" title="簡報頁碼">P.22</span></div>
+<h3>頭沉、腿疼，心裡不耐煩</h3>
+<p class="txt">到次日起來，<u>頭沉，懶待往衙門中去</u>。梳頭淨面，穿上衣裳，走來前邊書房中籠上火，那裡坐的。只見玉簫早辰來如意兒房中，擠了半甌子奶，徑到廂房與西門慶吃藥。見西門慶倚靠床上，有王經替他打腿。王經見玉簫來，就出去了。打發他吃藥，西門慶使他拏了一對金裹頭簪兒，四個烏銀戒指兒，教他送到來爵媳婦子房裡去。那玉簫聽見主子使他乾此營生，又似來旺媳婦子那一本帳，連忙鑽頭覓縫袖的去了。送到了物事，還走來回西門慶話，說道：「收了，改日與爹磕頭」。拏回空甌子兒到上房。月娘問他：「你爹吃了藥了？在廂房內做甚麼哩？」玉簫道：「沒言語。」月娘道：「你替他熬粥下來。」……正在凝思之際，忽見吳月娘驀地走來，掀開簾子，<u>見躺在床上，王經扒著替他打腿</u>。便說道：「你怎的只顧在前頭，就沒進去了？屋裡擺下粥了。你告我說，你心裡怎的？<b>只是恁沒精神！</b>」西門慶道：「<b>不知怎的，心中只是不耐煩，害腿疼。</b>」月娘道：「想必是春氣起了。你吃了藥也，等慢慢來。」一面請到房中，打發他吃了粥。</p>
+</article>
+<article class="psg" id="p23">
+<div class="meta"><span class="kicker">第 79 回 · 原文 3／11</span><span class="pno" title="簡報頁碼">P.23</span></div>
+<h3>到了情婦家，又是酒，又是藥</h3>
+<p class="txt">飲至半酣，見房內無人，西門慶袖中取出來套在龜身下。兩根錦帶兒，扎在腰間，龜頭又帶著景東人事，用酒服下胡僧藥下去。那婦人用手搏弄，弄的那話登時奢棱跳腦，橫筋皆現，色若紫肝，比銀托子和白綾帶子又不同。西門慶摟婦人坐在懷內，那話插進牝中，在上面兩個一遞一口飲酒咂舌頭。婦人把菓仁兒用舌尖哺與西門慶吃，直頑笑吃至掌燈。馮媽媽廚下做了豬肉韮菜餅兒拿上來，婦人陪西門慶每人吃了兩個，丫鬟收下去。兩個在裡間廂成的暖炕上，撩開錦幔，二人解衣就寢。婦人知道西門慶好點著燈行房，把燈台移在明間炕邊一張卓上安放，一面將紙門關上，澡牝乾淨，換了一雙大紅潞紬白綾平底鞋兒，穿在腳上，脫了褲兒，鑽在被窩裡與西門慶做一處，相摟相抱睡了一回。</p>
+</article>
+<article class="psg" id="p24">
+<div class="meta"><span class="kicker">第 79 回 · 原文 4／11</span><span class="pno" title="簡報頁碼">P.24</span></div>
+<h3>心裡想的，卻是另一個女人</h3>
+<p class="txt">原來西門慶心中，只想著何千戶娘子藍氏，欲情如火，那話十分堅硬，先令婦人馬伏在下，那話放入庭花內，極力搗硼了，約二三百度，搗硼的屁股連聲響喨，婦人用手在下，操著秘心子，口中叫達達如流水。於是心中還不美意，起來披上白綾小襖，坐在一隻枕頭上，婦人仰臥，尋出兩條腳帶，把婦人兩隻腳拴在兩邊護炕柱兒上，賣了個金龍探爪，將那話放入牝中。少時，沒棱露腦，淺抽深送；次後，半出半入，才進長驅。恐其婦人害冷，亦取紅綾短襦，蓋在他身上。這西門慶乘其酒興，把燈光挪近根前，垂首玩其出入之勢，抽徹至首，複送至根，又數百回。婦人口中百般柔聲顫語，都叫將出來，西門慶又取粉的膏子藥，塗在龜頭上攮進去，婦人陰中麻癢不能當，急令深入，兩相迎就。這西門慶故作逗遛，戲將龜頭濡㨪其牝口，又挑弄其花心，不肯深入。急的婦人淫津流出，如蝸之吐涎，往來滯的牝戶，翻覆可愛。</p>
+</article>
+<article class="psg" id="p25">
+<div class="meta"><span class="kicker">第 79 回 · 原文 5／11</span><span class="pno" title="簡報頁碼">P.25</span></div>
+<h3>「把不值錢的身子，拚與達達罷」</h3>
+<p class="txt">燈光影里，見他兩隻腿兒，穿著大紅鞋兒，白生生腿兒，蹺在兩邊，吊的高高的，一往一來，一衝一撞，其興不可遏。因口呼道：「淫婦，你想我不想？」婦人道：「我怎不想達達，只要你松栢兒冬夏長青，便好。休要日遠日疏，頑耍膩了，把奴來也不理，奴就想死了罷了！敢和誰說？有誰知道？必是俺那王八來家，我也不和他說。想他恁在外邊做買賣，有錢不養老婆的，他肯挂念我？」西門慶道：「我的兒，你若一心在我身上，等他來家，我爽利替他另娶一個，你只長遠等著我便了。」婦人道：「我達達，等他來家，好歹替他娶了一個罷！或把我放在外頭，或是招我到家去，隨你心裡。淫婦爽利把不值錢的身子，拚與達達罷，無有個不依你的。」西門慶道：「我知道。」兩個說話之間，又乾勾兩頓飯時，方才精拽。解卸下婦人腳帶來，摟在被窩內，並頭交股，<b>醉眼朦朧，一覺直睡到三更天氣方醒</b>。</p>
+</article>
+<article class="psg" id="p26">
+<div class="meta"><span class="kicker">第 79 回 · 原文 6／11</span><span class="pno" title="簡報頁碼">P.26</span></div>
+<h3>三更，橋下的黑影</h3>
+<p class="txt">西門慶起來穿衣淨手，婦人開了房門，叫丫鬟進來，再添美饌，複飲香醪，滿斟暖酒，又陪西門慶吃了十數杯，<b>不覺醉上來</b>，才點茶來漱了口，向袖中掏出一紙帖兒，遞與婦人：「問甘伙計鋪子裡取一套衣服你穿，隨你要甚花樣。」那婦人萬福謝了，送出門。王經打著燈籠，玳安、琴童籠著馬，打發上了馬，婦人方才關門。這西門慶身穿紫羊絨褶子，圍著風領，騎在馬上。那時也有三更時分，天氣有些陰雲，昏昏慘慘的月色，街巿上靜悄悄，九衢澄淨，嗚柝唱號提鈴。打馬正過之次，剛走到西首那石橋兒根前，忽然見一個黑影子，從橋底下鑽出來，向西門慶一拾，那馬見了只一驚躲，<b>西門慶在馬上打了著個冷戰，醉中把馬加了一鞭</b>，那馬搖了搖鬃，玳安、琴童兩個用力拉著嚼環，收熬不住，雲飛般望家奔將來，直跑到家門首方止。王經打著燈籠，後邊跟不上。<b>西門慶下馬，腿軟了</b>，被左右扶進，徑在前邊潘金蓮房中來。</p>
+</article>
+<article class="psg" id="p27">
+<div class="meta"><span class="kicker">第 79 回 · 原文 7／11</span><span class="pno" title="簡報頁碼">P.27</span></div>
+<h3>千不合，萬不合</h3>
+<p class="txt">（金蓮）見他吃的酩酊大醉，也不敢問他。這西門慶只手搭伏著他肩膊上，摟在懷裡，口中喃喃吶吶說道：「小淫婦兒，你達達今日醉了，收拾鋪我睡也。」那婦人扶他上炕，打發他歇下。那西門慶丟倒頭在枕頭上，鼾睡如雷，再搖也搖不醒。然後婦人脫了衣裳，鑽在被窩內，慢慢用手腰裡摸他那話，<b>猶如綿軟，再沒些硬朗氣</b>，更不知在誰家來？翻來覆去，怎禁那欲火燒身，淫心蕩意。不住用手只顧捏弄，蹲下身子，被窩內替他百計品咂，<b>只是不起</b>。急的婦人要不的。因問西門慶：「和尚藥在那裡放著哩？」推了半日，推醒了。<b>西門慶酩酊裡罵道：「怪小淫婦，只顧問怎的！你又教達達擺布你？你達今日懶待動彈。藥在我袖中金穿心盒兒內，你拏來吃了，有本事品弄的他起來，是你造化。」</b>那婦人便去袖內摸出穿心盒，打開裏面，只剩下三四丸藥兒。這婦人取過燒酒壺來。斟了一鍾酒，自己吃了一丸。還剩三丸，恐怕力不效，千不合，萬不合，拏燒酒都送到西門慶口內。</p>
+</article>
+<article class="psg" id="p28">
+<div class="meta"><span class="kicker">第 79 回 · 原文 8／11</span><span class="pno" title="簡報頁碼">P.28</span></div>
+<h3>藥力發作</h3>
+<p class="txt">醉了的人，曉的甚麼，合著眼只顧吃下去。那消一盞熱茶時，藥力發作起來，婦人將白綾帶子拴在根上，那話躍然而起。但見裂瓜頭凹眼圓睜，落腮胡挺身直豎，婦人見他只顧睡，於是騎在他身上，又取膏子藥安放馬眼內，頂入牝中。只顧揉搓，那話直抵苞花窩裡，覺翕翕然渾身酥麻，暢美不可言。又兩手據按，舉股一起一坐那話沒棱露腦，約一二百回，初時澀滯，次後淫水浸出，稍沾滑落，西門慶由著他掇弄，只是不理。婦人情不能當，以舌親於西門慶口中，兩手摟著他脖項，極力揉搓，左右偎擦，塵柄盡沒至根，止剩二卵在外。用手摸之，美不可言，淫水隨拭隨出，比三鼓，凡五換巾帕，婦人一連丟了兩次。西門慶只是不洩，龜頭越發脹的色若紫肝，橫筋皆現，猶如火熱。</p>
+</article>
+<article class="psg" id="p29">
+<div class="meta"><span class="kicker">第 79 回 · 原文 9／11</span><span class="pno" title="簡報頁碼">P.29</span></div>
+<h3>精盡繼之以血</h3>
+<p class="txt">一回，害箍脹的慌，令婦人把根下帶子去了，還發脹不已。令婦人用口吮之，這婦人扒伏在他身上，用朱唇吞裹其龜頭，只顧往來不已。又勒勾約一頓飯時，那管中之精，猛然一股，邈將出來，猶水銀之瀉筒中相似，忙用口接咽不及，只顧流將起來。<b>初時還是精液，往後盡是血水出來，再無個收救。</b><b>西門慶已昏迷去，四肢不收。</b>婦人也慌了，急取紅棘與他吃下去。<b>精盡繼之以血，血盡出其冷氣而已</b>。良久方止。婦人慌做一團，便摟著西門慶，問道：「我的哥哥，你心裡覺怎麼的？」西門慶甦省了一回，方言：「<b>我頭目森森然，莫知所矣。</b>」「你今日怎的流出恁許多？」更不說他用的藥多了。看官聽說：「一已精神有限，天下色欲無窮。」又曰：「嗜欲深者，其天機淺。」<b>西門慶只知貪淫樂色，更不知油枯燈盡，髓竭人亡。原來這女色坑陷得人有成時必有敗。</b></p>
+</article>
+<article class="psg" id="p30">
+<div class="meta"><span class="kicker">第 79 回 · 原文 10／11</span><span class="pno" title="簡報頁碼">P.30</span></div>
+<h3>隔天早上，他在梳頭時倒下</h3>
+<p class="txt">一宿晚景題過。到次日清早晨，西門慶起來梳頭，<b>忽然一陣暈起來，望前一頭搶將去</b>。早被春梅雙手扶住，不曾跌著，磕傷了頭臉。在椅子上坐了半日，方才回過來。慌的金蓮連忙問道：「只怕你空心虛弱，且坐著吃些甚麼兒著出去也不遲。」一面使秋菊：「後邊取粥來，與你爹吃。」那秋菊走到後邊廚下，問雪娥：「熬的粥怎麼了？爹如此這般，今早起來害頭暈，跌了一交，如今要吃粥哩！」不想被月娘聽見，叫了秋菊，問其端的。秋菊悉把西門慶梳頭，頭暈跌倒之事，告訴一遍。月娘不聽便了，聽了魂飛天外，魄散九霄。一面分付雪娥快熬粥，一面走來金蓮房中看視。見西門慶坐在椅子上，問道：「你今日怎的頭暈？」<b>西門慶道：「我不知怎的？剛才就頭暈起來。」</b>金蓮道：「早時我和春梅在根前扶住了；不然，好輕身子兒，這一交和你善哩！」</p>
+</article>
+<article class="psg" id="p31">
+<div class="meta"><span class="kicker">第 79 回 · 原文 11／11</span><span class="pno" title="簡報頁碼">P.31</span></div>
+<h3>「他昨日來家不醉？」</h3>
+<p class="txt">月娘道：「敢是你昨日來家晚了，酒多了頭沉？」金蓮道：「昨日往誰家吃酒，這咱晚才來？」月娘道：「他昨日和他二舅在鋪子裡吃酒來。」不一時，雪娥熬了粥，教秋菊拿著，打發西門慶吃。那西門慶拏起粥來，只吃了半甌兒，<b>懶待吃</b>，就放下了。月娘道：「你心裡覺怎的？」西門慶道：「<b>我不怎麼，只是身子虛飄飄的，懶待動彈。</b>」……教西門慶吃了藥，起身往前邊去。春梅扶著，<b>剛走到花園角門首，覺眼便黑了，身子晃晃蕩蕩，做不的主兒，只要倒</b>。春梅又扶回來了。……月娘到後邊，從新又<b>審問金蓮：「他昨日來家不醉？再沒曾吃酒？與你行甚麼事？」</b>那金蓮聽了，恨不的生出幾個口來，說一千個沒有：「姐姐，你沒的說。他那咱晚來了，醉的行禮兒也不顧的，還問我燒酒吃。教我拏茶當酒與他吃，只說沒了酒，好好打發他睡了。」</p>
+</article>
+</section>
+<section class="chapter" id="ch2" aria-labelledby="ch2-h">
+<header class="ch-head"><span class="ch-lab">第二章</span><h2 id="ch2-h">潘金蓮：被標價的人</h2></header>
+<article class="psg" id="p38">
+<div class="meta"><span class="kicker">不同版本的潘金蓮</span><span class="pno" title="簡報頁碼">P.38</span></div>
+<h3><span class="dot dot-a" aria-hidden="true"></span>版本 A · 綠色杯墊</h3>
+<p class="txt">且說西門慶自在房裏，便斟酒來勸那婦人，卻把袖子在卓上一拂，把那雙筯拂落地下。也是緣法湊巧，那雙筯正落在婦人腳邊。西門慶連忙蹲身下去拾。只見那婦人尖尖的一雙小腳兒，正蹻在筯邊。西門慶且不拾筯，便去那婦人綉花鞋兒上捏一把。那婦人便笑將起來，說道：「官人休要囉唣！你有心，奴亦有意，你真個要勾搭我？」西門慶便跪下道：「只是娘子作成小生。」那婦人便把西門慶摟將起來。當時兩個就王婆房裡，脫衣解帶，共枕同歡。</p>
+</article>
+<article class="psg" id="p39">
+<div class="meta"><span class="kicker">不同版本的潘金蓮</span><span class="pno" title="簡報頁碼">P.39</span></div>
+<h3><span class="dot dot-b" aria-hidden="true"></span>版本 B · 紅色杯墊</h3>
+<p class="txt">西門慶笑著道：「娘子不與小人安放，小人偏要自己安放。」一面伸手隔桌子搭到床炕上去，卻故意把桌上一拂，拂落一隻筯來。卻也是姻緣湊著，那隻筯兒剛落在金蓮裙下。西門慶一面斟酒勸那婦人，婦人笑著不理他。他卻又待拿起筯子起來，讓他吃菜兒。尋來尋去不見了一隻。這金蓮一面低著頭，把腳尖兒踢著，笑道：「這不是你的筯兒！」西門慶聽說，走過金蓮這邊來道：「原來在此。」蹲下身去，且不拾筯，便去他綉花鞋頭上只一捏。那婦人笑將起來，說道：「怎這的羅唣！我要叫起來哩！」西門慶便雙膝跪下說道：「娘子可憐小人則箇！」一面說著，一面便摸他褲子。婦人叉開手道：「你這歪廝纏人，我卻要大耳刮子打的呢！」西門慶笑道：「娘子打死了小人，也得箇好處。」于是不繇分說，抱到王婆床炕上，脫衣解帶，共枕同歡。</p>
+</article>
+<article class="psg" id="p41">
+<div class="meta"><span class="kicker">崇禎本 · 敘事者補了一段</span><span class="pno" title="簡報頁碼">P.41</span></div>
+<h3>她從沒遇過這樣的男人</h3>
+<p class="txt">卻說這婦人自從與張大戶抅搭，這老兒是軟如鼻涕膿如醬的一件東西，幾時得箇爽利！就是嫁了武大，看官試想，三寸丁的物事，能有多少力量？今番遇了西門慶，風月久慣，本事高強的，如何不喜？</p>
+<p class="note">潘金蓮從沒遇過真正的、年輕的、有力量的男人。一經比較，她才懂得男女究竟是怎麼一回事，作為女子的立場也因此出現變化。</p>
+</article>
+<article class="psg" id="p43">
+<div class="meta"><span class="kicker">崇禎本《金瓶梅》第 1 回 · 原文</span><span class="pno" title="簡報頁碼">P.43</span></div>
+<h3>她叫武大拿她的釵梳去典房子</h3>
+<p class="txt">因此武大在紫石街又住不牢，要往別處搬移，與老婆商議。婦人道：「賊餛飩不曉事的，你賃人家房住，淺房淺屋，可知有小人囉唣！不如湊幾兩銀子，看相應的，典上他兩間住，卻也氣慨些，免受人欺侮。」武大道：「我那裡有錢典房？」婦人道：「呸！濁才料，你是個男子漢，倒擺布不開，常交老娘受氣。<b>沒有銀子，把我的釵梳湊辦了去</b>，有何難處！過後有了再治不遲。」武大聽老婆這般說，當下湊了十數兩銀子，典得縣門前樓上下兩層四間房屋居住。</p>
+</article>
+</section>
+<section class="chapter" id="ch3" aria-labelledby="ch3-h">
+<header class="ch-head"><span class="ch-lab">第三章</span><h2 id="ch3-h">如意兒：只剩自己能押的人</h2></header>
+<article class="psg" id="p47">
+<div class="meta"><span class="kicker">Chapter 03 · 她是誰</span><span class="pno" title="簡報頁碼">P.47</span></div>
+<h3>一個用六兩銀子賣進來的奶媽</h3>
+<p class="txt">「新近丟了孩兒，不上一個月。男子漢當軍，過不的，恐出征去無人養贍，只要六兩銀子要賣他。」</p>
+<p class="cue">官哥兒一死，她對悲慟不已的李瓶兒哭道：</p>
+<p class="txt">「小媳婦有句話，不敢對娘說──今日哥兒死了，乃是小媳婦沒造化。只怕往後爹與大娘打發小媳婦出去，小媳婦男子漢又沒了，<b>那裡投奔？</b>」</p>
+</article>
+<article class="psg" id="p48">
+<div class="meta"><span class="kicker">走投無路如意兒 · 原文</span><span class="pno" title="簡報頁碼">P.48</span></div>
+<h3>李瓶兒怎麼回她</h3>
+<p class="txt">李瓶兒道：「怪老婆，孩子便沒了，我還沒死哩！總然我到明日死了，你恁在我手下一場，我也不教你出門。往後你大娘生下哥兒小姐來，交你接了奶，就是一般了。<b>你慌亂的是甚麼？</b>」那如意兒方纔不言語了。</p>
+<p class="turn">可是不久之後，李瓶兒也死了。</p>
+</article>
+<article class="psg" id="p49">
+<div class="meta"><span class="kicker">走投無路如意兒 · 原文</span><span class="pno" title="簡報頁碼">P.49</span></div>
+<h3>李瓶兒死後</h3>
+<p class="txt">（李瓶兒死後）奶子如意兒，無人處常在跟前遞茶遞水，挨挨搶搶，掐掐捏捏，插話兒應答，那消三夜兩夜。這日，西門慶……夜間要茶吃，叫迎春不應，如意兒便來遞茶。因見被拖下炕來，接過茶盞，用手扶被，西門慶一時興動，摟過脖子就親了個嘴，遞舌頭在他口內。老婆就咂起來，一聲兒不言語。西門慶令脫去衣服上炕，兩個摟在被窩內，不勝歡娛，雲雨一處。老婆說：「既是爹抬舉，娘也沒了，小媳婦情願不出爹家門，隨爹收用便了。」西門慶便叫：「我兒，你只用心伏侍我，愁養活不過你來！」這老婆聽了，枕席之間，無不奉承，顛鸞倒鳳，隨手而轉，把西門慶歡喜的要不的。</p>
+</article>
+<article class="psg" id="p50">
+<div class="meta"><span class="kicker">走投無路如意兒 · 原文與評點</span><span class="pno" title="簡報頁碼">P.50</span></div>
+<h3>她使出渾身解數</h3>
+<p class="txt">西門慶告他說：「你五娘怎的替我咂，半夜怕我害冷，連尿也不教我下來溺，都替我嚈了。」老婆道：「這不打緊，等我也替爹吃了就是了。」</p>
+<p class="txt">西門慶道：「我兒，我心裡要在你身上燒炷香兒。」老婆道：「隨爹揀著燒。」西門慶令他關上房門，把裙褲脫了，仰臥在炕上。西門慶袖內還有燒林氏剩下的三個燒酒浸的香馬兒，撇去他抹胸兒，一個坐在他心口內，一個坐在他小肚兒底下，一個安在他屄蓋子上，用安息香一齊點著。</p>
+<p class="comment">崇禎本評點：「合著寵利，丈夫吮癰舐痔者多矣，況人女子乎！」</p>
+<p class="comment">張竹坡：「上文寫一喫溺之金蓮，此回又寫一效尤之如意兒。總為吮癰舐痔者極力醜之也。」</p>
+</article>
+</section>
+<section class="after" id="after" aria-labelledby="after-h">
+<header class="ch-head"><span class="ch-lab">今天之後</span><h2 id="after-h">想繼續聊下去</h2></header>
+<div class="next">
+<span class="when">NEXT GLASS · 2027 年 1 月</span>
+<p class="ttl">下一杯：一本被誤會的書之後，換一個被誤會的大腦——成人 ADHD</p>
+<p>日期與報名資訊即將公布，會先發在官網和 Instagram。</p>
+<a class="btn primary" href="adhd.html">看成人 ADHD 場次介紹</a>
+</div>
+<div class="links">
+<a class="btn ghost" href="index.html">學術酒吧官網：所有場次</a>
+<a class="btn ghost" href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener">Instagram @lectures_bytheglass</a>
+<a class="btn ghost" href="https://www.youtube.com/@%E8%83%A1%E8%A1%8D%E5%8D%97" target="_blank" rel="noopener">胡大俠說書｜胡衍南老師的 YouTube 頻道</a>
+</div>
+</section>
+</main>
+
+<footer class="wrap end">
+  <a href="#people">回到開頭</a>
+  <a href="index.html">學術酒吧 Lectures by the Glass 官網</a>
+</footer>
+
+<script>
+(function () {
+  var sizes = [1, 1.125, 1.25, 1.4, 1.6];
+  var key = 'lbtg-jpm-fs';
+  var i = 1;
+  try { var s = parseInt(localStorage.getItem(key), 10); if (s >= 0 && s < sizes.length) i = s; } catch (e) {}
+  var down = document.getElementById('fs-down'), up = document.getElementById('fs-up');
+  function apply() {
+    document.documentElement.style.setProperty('--fs', sizes[i] + 'rem');
+    down.disabled = i === 0; up.disabled = i === sizes.length - 1;
+    try { localStorage.setItem(key, String(i)); } catch (e) {}
+  }
+  down.addEventListener('click', function () { if (i > 0) { i--; apply(); } });
+  up.addEventListener('click', function () { if (i < sizes.length - 1) { i++; apply(); } });
+  apply();
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('#tabs a'));
+  function mark(id) {
+    links.forEach(function (a) {
+      var on = a.getAttribute('data-for') === id;
+      a.classList.toggle('on', on);
+      if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+    });
+  }
+  mark('people');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) mark(en.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    document.querySelectorAll('.chapter').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

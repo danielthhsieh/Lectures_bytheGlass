@@ -8,7 +8,8 @@
 | --- | --- | --- |
 | `index.html` | `/` | 首頁；近期場次由檔案底部的 `EVENTS` 陣列產生 |
 | `jinpingmei.html` | `/jinpingmei` | 12/12「酒色財氣：從《金瓶梅》學會職場降妖術」場次頁 |
-| `adhd.html` | `/adhd` | 成人 ADHD 場次頁，**日期待公布、目前隱藏**：首頁與金瓶梅頁都不連過來，`<head>` 設 `noindex`（11/14 決定延到 2027 年 1 月） |
+| `ThePlumInTheGoldenVase-text.html` | `/ThePlumInTheGoldenVase-text` | 12/12 現場用的手機版原文頁（人物關係＋原文）；人物卡背面與桌卡的 QR Code 連到這裡。`noindex`，首頁不連過來。原文段落等胡教授提供簡報後再更新 |
+| `adhd.html` | `/adhd` | 成人 ADHD 場次頁，**日期待公布、目前隱藏**：首頁與金瓶梅頁都不連過來（原文頁「今天之後」會連過來，預計 12/12 前公布），`<head>` 設 `noindex`（11/14 決定延到 2027 年 1 月） |
 | `assets/` | | logo、胡衍南講者照、favicon、首頁 hero 底圖 `venue.jpg`（Drizzle 空場照，模糊後當底） |
 | `vercel.json` | | `cleanUrls`（去掉 .html），以及 `/vol3`、`/vol4`、舊檔名的轉址 |
 
@@ -70,6 +71,7 @@ Vercel 會在每次 push 到 `main` 後自動重新部署，約 1 分鐘生效�
 - [ ] 金瓶梅 Part 1–4 的講綱（特別是「小人的職場生存學」）：待透過 Chris 和胡教授確認
 - [x] 退費規則改為新規（11/14，以 join1 為準）：票券售出後不退換、不延用，可轉讓給親友（活動前私訊 IG 或官方 Line 更名）；首頁、金瓶梅、ADHD 三頁 FAQ 與票種區已同步
 - [x] 金瓶梅票種：早鳥 999 元（12/5 前）、原價 1,199 元（12/6 起），含兩杯葡萄酒（每杯 60ml）或一杯無酒精特調；不推雙場聯票
+- [ ] 原文頁 `ThePlumInTheGoldenVase-text.html`：收到胡教授的簡報後，依他選的段落更新原文、分頁與頁碼（目前仍是舊版簡報的段落）
 - [ ] 12/12 的開始時間（目前沿用 14:00–15:30）
 - [ ] 分享預覽圖（`og:image`，1200×630）：三頁都還沒有，做好後放進 `assets/`，在各頁 `<head>` 加 `<meta property="og:image" content="https://<網域>/assets/xxx.png">`
 - [ ] 分析工具（GA4 或 Plausible）、Meta Pixel
