@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=Oswald:wght@500;600&display=swap">
 <style>
-/* Layout: one dark bar at night. A single column of "rounds" (sections) under a pill nav, each opening with its question; the four pillar colours appear only where a pillar is named. */
+/* Layout: one dark bar. A single column of "rounds" (sections) under a pill nav, each opening with its question; topic colours appear only on event posters. */
 :root {
   color-scheme: dark;
   --bg: #0e0c0a; --bg-raised: #1b1815; --line: #3a352e; --line-strong: #8a7f6e;
@@ -295,8 +295,8 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
     <a class="brand" href="#top">LECTURES BY THE GLASS</a>
     <a href="#about">我們是誰</a>
     <a href="#events">近期場次</a>
-    <a href="#pillars">講什麼</a>
-    <a href="#night">一場怎麼進行</a>
+    <a href="#topics">聊什麼</a>
+    <a href="#how">一場怎麼進行</a>
     <a href="#faq">常見問題</a>
     <a href="#follow">追蹤我們</a>
   </div>
@@ -373,26 +373,25 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   </div>
 </section>
 
-<section class="band" id="pillars">
+<section class="band" id="topics">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Four pillars · 講什麼</p>
-      <h2 class="h2">四根支柱，四類問題</h2>
-      <p class="lede">每一場都從一個跟你有關的問題出發，落在這四類主題裡。</p>
+      <p class="eyebrow">Topics · 我們會聊什麼</p>
+      <h2 class="h2">從一個你也想過的問題開始</h2>
+      <p class="lede">心理、關係、文學、歷史，或任何讓人好奇的領域，主題不設限。每一場都從一個跟生活有關的問題出發，請在這個領域深耕的人來聊。</p>
     </div>
-    <div class="pillars">
-      <article class="pillar p-psyche"><span class="pk">PILLAR 01</span><h3>關係與心理</h3><ul><li>為什麼我們總愛上不該愛的人？</li><li>為什麼情侶總是為同一件事吵架？</li></ul></article>
-      <article class="pillar p-canon"><span class="pk">PILLAR 02</span><h3>禁忌、文學<br>與歷史</h3><ul><li>400 年前的禁書，為什麼今天還讀得下去？</li><li>我們為什麼需要儀式？</li></ul></article>
-      <article class="pillar p-senses"><span class="pk">PILLAR 03</span><h3>哲學與人生</h3><ul><li>人生有意義嗎，還是我們替它找意義？</li><li>AI 會思考嗎，還是只是看起來會？</li></ul></article>
-      <article class="pillar p-city"><span class="pk">PILLAR 04</span><h3>社會、金錢<br>與城市</h3><ul><li>錢為什麼讓人不快樂？</li><li>為什麼聰明人也會被詐騙？</li></ul></article>
+    <div class="promises">
+      <div class="promise"><span class="ways-k">聊過的 · GLASS NO.01</span><h3>關係裡，為什麼總是一個追、一個逃？</h3><p>第 1 杯，我們聊依附關係，35 席坐滿。</p></div>
+      <div class="promise"><span class="ways-k">正在聊的 · 12.12</span><h3>400 年前的禁書，為什麼今天還讀得下去？</h3><p>拿《金瓶梅》當照妖鏡，看懂身邊的人情世故。</p></div>
+      <div class="promise"><span class="ways-k">還沒聊的 · NEXT</span><h3>你想聽什麼？</h3><p>下一個主題還在醞釀。想聽什麼、想問誰，到 <a href="https://www.threads.com/@lectures_bytheglass" target="_blank" rel="noopener" style="color:var(--neon)">Threads</a> 告訴我們。</p></div>
     </div>
   </div>
 </section>
 
-<section class="band" id="night" style="border-top:1px solid var(--line)">
+<section class="band" id="how" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">One night · 一場怎麼進行</p>
+      <p class="eyebrow">How it goes · 一場怎麼進行</p>
       <h2 class="h2">不只是聽一場講座</h2>
       <p class="lede">每一場都有領域專家完整的分享，也有一段為這個主題設計的互動。互動放在哪裡、用什麼形式，每一場都不一樣：可能穿插在講座中間，可能藏在你手上的那杯酒裡，也可能請你離開座位、走到台前。</p>
     </div>
@@ -449,7 +448,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
       <details><summary>一個人去會不會很尷尬？</summary><p class="a">很多人是一個人來的。現場以桌為單位安排，每一場的互動都設計成不用先開口也能參與，而且都可以選擇不參加。</p></details>
       <details><summary>票買了可以退嗎？</summary><p class="a">票券售出後不退換、也不能延用到其他場次，但可以轉讓給親友。活動前私訊 Instagram 或官方 Line，告訴我們新參加者的名字就完成更名。</p></details>
       <details><summary>可以開發票或收據嗎？</summary><p class="a">目前報名費不提供收據或發票，有報帳需求請在報名前評估。之後若有調整，會寫在各場報名頁。</p></details>
-      <details><summary>有年齡限制嗎？現場會拍照嗎？</summary><p class="a">活動有提供酒精飲品，未滿 18 歲請勿報名。活動全程會攝影紀錄，畫面可能用於品牌社群；不想入鏡可以在現場告訴工作人員。</p></details>
+      <details><summary>有年齡限制嗎？現場會拍照嗎？</summary><p class="a">活動有提供酒精飲品，未滿 18 歲請勿報名。活動全程會攝影紀錄，照片與影像可能用於學術酒吧的社群與宣傳，報名即表示同意。</p></details>
     </div>
   </div>
 </section>
@@ -499,7 +498,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
 var IG = "https://www.instagram.com/lectures_bytheglass/";
 var EVENTS = [
   {
-    label: "NEXT", series: "教授開講", pillar: "canon", pillarName: "禁忌、文學與歷史",
+    label: "NEXT", series: "教授開講", pillar: "canon", pillarName: "文學與人情",
     date: "12.12", day: "SAT", time: "14:00", theme: "酒色財氣",
     question: "酒色財氣：從《金瓶梅》學會職場降妖術",
     speaker: "胡衍南", speakerTitle: "臺灣師範大學國文學系教授",
