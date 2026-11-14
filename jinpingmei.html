@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>情色時代：誰在出價，誰被標價？｜學術酒吧 12/12</title>
-<meta name="description" content="12/12（六）學術酒吧下一杯：師大胡衍南教授帶你一起讀《金瓶梅》。不用讀過，只開 35 席，含一杯葡萄酒（也有無酒精特調）。">
+<title>酒色財氣：從《金瓶梅》學會職場降妖術｜學術酒吧 12/12</title>
+<meta name="description" content="12/12（六）學術酒吧下一杯：師大胡衍南教授拿《金瓶梅》當照妖鏡，帶你看懂職場裡的人情世故。0 門檻、0 基礎，只開 35 席，含兩杯葡萄酒（也有無酒精特調）。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="情色時代：誰在出價，誰被標價？｜學術酒吧 12/12">
-<meta property="og:description" content="12/12（六）師大胡衍南教授帶你讀《金瓶梅》。不用讀過，只開 35 席。">
+<meta property="og:title" content="酒色財氣：從《金瓶梅》學會職場降妖術｜學術酒吧 12/12">
+<meta property="og:description" content="12/12（六）在酒吧聽師大胡衍南教授講《金瓶梅》裡的職場人情。0 門檻、0 基礎，無酒精友善，只開 35 席。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,13 +77,16 @@ p { margin: 0; }
 .byline b { color: var(--ink); font-weight: 500; }
 @media (max-width: 860px) { .hero .rings { display: none; } }
 
-/* three trades */
+/* four parts / drinks */
 .trades { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.trades.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1040px) { .trades.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.trade .wine { font-size: 14px; color: var(--ink-muted); }
 .trade { background: var(--bg-raised); padding: 28px; display: grid; gap: 10px; align-content: start; }
 .trade .who { font-size: 14px; font-weight: 700; }
 .trade h3 { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.4; }
 .trade p { font-size: 16px; color: var(--ink-muted); }
-@media (max-width: 860px) { .trades { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 860px) { .trades, .trades.four { grid-template-columns: minmax(0, 1fr); } }
 
 /* flow */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -106,6 +109,7 @@ p { margin: 0; }
 .tickets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .ticket { background: var(--bg-raised); padding: 24px; display: grid; gap: 6px; align-content: start; border: 2px solid transparent; }
 .ticket.best { border-color: var(--neon); }
+.tickets.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 740px; }
 .ticket .k { font-size: 14px; font-weight: 700; color: var(--ink-muted); }
 .ticket.best .k { color: var(--neon); }
 .ticket .price { font-family: var(--display); font-size: 40px; font-weight: 600; line-height: 1.2; letter-spacing: .02em; }
@@ -114,7 +118,7 @@ p { margin: 0; }
 .fine { font-size: 15px; color: var(--ink-muted); margin-top: 24px; }
 .signup-row { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 28px; }
 @media (max-width: 960px) { .tickets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .tickets { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .tickets, .tickets.two { grid-template-columns: minmax(0, 1fr); } }
 
 /* faq */
 .faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
@@ -181,7 +185,7 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-in
   text-shadow: 0 0 4px #fff, 0 0 14px var(--nc, #FFD978), 0 0 30px var(--nc, #FFD978); }
 @media (max-width: 860px) { .hero-bg .tube { width: 84px; height: 84px; font-size: 17px; top: 76px; right: 16px; } .hero-bg .streak { left: 70%; } }
 @media (max-width: 600px) { .hero-bg .tube { display: none; } }
-.hero h1 em { color: var(--neon); text-shadow: 0 0 28px var(--glow); }
+.hero h1 em { font-style: normal; color: var(--neon); text-shadow: 0 0 28px var(--glow); }
 
 /* 按鈕：Primary 一律 Paper 膠囊 */
 .btn { border-radius: 999px; }
@@ -233,8 +237,9 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
 <nav class="nav" aria-label="場次選單">
   <div class="nav-inner" id="navInner">
     <a class="brand" href="index.html">← LECTURES BY THE GLASS</a>
-    <a href="#trades">三種交換</a>
-    <a href="#flow">現場流程</a>
+    <a href="#parts">講座內容</a>
+    <a href="#flow">現場怎麼進行</a>
+    <a href="#drinks">酒單</a>
     <a href="#speaker">講者</a>
     <a href="#tickets">票種</a>
     <a href="#faq">常見問題</a>
@@ -245,45 +250,52 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   <div class="hero-bg" aria-hidden="true"><div class="tint"></div><div class="streak"></div><div class="tube">NEXT</div></div>
   <div class="wrap">
     <p class="meta">NEXT GLASS · 12.12 SAT 14:00–15:30 · DRIZZLE BY FOURPLAY</p>
-    <p class="series">情色時代</p>
-    <h1>誰在出價，<br>誰被標價？</h1>
-    <p class="sub">師大教授帶你一起讀《金瓶梅》：一本被禁四百年的書，寫盡身體、金錢與愛的交換。四百年前的人在交換什麼，今天的我們也在交換。</p>
+    <p class="series">酒色財氣</p>
+    <h1>從《金瓶梅》<br>學會職場<em>降妖術</em></h1>
+    <p class="sub">職場不養閒人，但很會養妖怪。一本被禁四百年的書，寫盡人情世故。在酒吧聽大學教授開講：拿《金瓶梅》當照妖鏡，看懂身邊的西門慶，也想想自己可以怎麼應對。</p>
     <div class="chips">
-      <span class="chip key">不用讀過《金瓶梅》</span>
+      <span class="chip key">0 門檻、0 基礎</span>
+      <span class="chip key">無酒精友善</span>
       <span class="chip">講座＋互動・90 分鐘</span>
       <span class="chip">只開 35 席</span>
-      <span class="chip">一杯葡萄酒（也有無酒精特調）</span>
+      <span class="chip">兩杯葡萄酒（每杯 60ml）或一杯無酒精特調</span>
       <span class="chip">限 18 歲以上</span>
     </div>
     <div class="ctas">
       <a class="btn pri" data-signup href="#tickets">立即報名 <span class="arr">→</span></a>
-      <span class="note">早鳥 999 元，11/22 截止</span>
+      <span class="note">早鳥 999 元，12/5 截止</span>
     </div>
-    <p class="byline">講者　<b>胡衍南</b>｜臺灣師範大學國文學系教授，著有《情色時代：《金瓶梅》與明清豔情小說研究》</p>
+    <p class="byline">講者　<b>胡衍南</b>｜臺灣師範大學國文學系教授，YouTube 與 Podcast「胡大俠說書」</p>
   </div>
 </header>
 
-<section class="band" id="trades">
+<section class="band" id="parts">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Three trades</p>
-      <h2 class="h2">三個人，三種交換。你一定認識其中一種。</h2>
+      <p class="eyebrow">Four parts</p>
+      <h2 class="h2">四個 Part，從一本禁書走回你的辦公室</h2>
+      <p class="lede">先用《金瓶梅》照見人性，再把書裡的人放回今天的職場。不用讀過，教授會帶你一起讀。</p>
     </div>
-    <div class="trades">
+    <div class="trades four">
       <article class="trade">
-        <span class="who" style="color:var(--neon)">出價的人｜西門慶</span>
-        <h3>有錢有權，為什麼還不安？</h3>
-        <p>一個什麼都買得起的暴發戶，為什麼要一再證明自己還握有一切？</p>
+        <span class="who" style="color:var(--neon)">PART 1</span>
+        <h3>流傳至今的照妖鏡</h3>
+        <p>一本被禁了四百年的書，為什麼把人情世故寫得這麼透？</p>
       </article>
       <article class="trade">
-        <span class="who" style="color:var(--canon)">被標價的人｜潘金蓮</span>
-        <h3>她被賣了兩次，然後學會自己出價</h3>
-        <p>被罵了四百年的「壞女人」，這個名聲是誰替她定的？</p>
+        <span class="who" style="color:var(--canon)">PART 2</span>
+        <h3>酒色財氣</h3>
+        <p>酒、色、財、氣，西門府裡每個人被哪一樣牽著走？</p>
       </article>
       <article class="trade">
-        <span class="who">只剩自己能押的人｜如意兒</span>
-        <h3>為了被留下來，可以多卑微？</h3>
-        <p>古人說她犯賤。但從沒有人問過她一聲：「妳為什麼？」</p>
+        <span class="who" style="color:var(--neon)">PART 3</span>
+        <h3>身邊隨處可見的西門慶</h3>
+        <p>把書裡的人放回今天，你會發現他們一直坐在你身邊。</p>
+      </article>
+      <article class="trade">
+        <span class="who" style="color:var(--canon)">PART 4</span>
+        <h3>小人的職場生存學</h3>
+        <p>看懂了小人，接下來你可以怎麼應對。</p>
       </article>
     </div>
   </div>
@@ -293,14 +305,14 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">How to play</p>
-      <h2 class="h2">帶著一個人的眼睛，跟我們一起聽這個故事。</h2>
-      <p class="lede">當天我們會邀請你，站在西門府裡某一個人的位置。接下來的 90 分鐘，你用他或她的眼睛看這場交換：誰在出價、誰被標價，而你手上又有什麼？講座中間全場會投幾次票；開場後和三章講完後，你也會和同桌的人各聊一次：同一個問題問兩次，看看答案會不會變。</p>
+      <h2 class="h2">抽一張人物卡，走進西門府</h2>
+      <p class="lede">當天你會抽到一張人物卡，站在西門府裡某一個人的位置聽故事。講座中間有一段為這場設計的劇本情節，和同桌的人一起討論：換一個角色的視角，答案可能就不一樣。所有互動都可以不參加，只聽也很好。</p>
     </div>
     <ol class="steps">
-      <li><span class="n">01</span><b>開場｜禁書的定價</b><span>看四百年前的人怎麼替書中人貼上標籤，再用 3 分鐘看懂西門府誰是誰</span></li>
-      <li><span class="n">02</span><b>桌邊討論｜第一次</b><span>站在你代表的那個人的立場，和同桌聊一個問題</span></li>
-      <li><span class="n">03</span><b>三章｜三個人的故事</b><span>西門慶、潘金蓮、如意兒，教授帶你一起讀書裡的段落。每一章前後各投一次票，看看你的判斷會不會變</span></li>
-      <li><span class="n">04</span><b>桌邊討論與結語</b><span>聽完三個人的故事，同一個問題再答一次，最後開放問答</span></li>
+      <li><span class="n">01</span><b>抽卡｜帶入角色視角</b><span>入座後抽一張人物卡，用他或她的眼睛聽接下來的故事</span></li>
+      <li><span class="n">02</span><b>講座｜四個 Part</b><span>從照妖鏡、酒色財氣，一路講到身邊的西門慶與小人的職場生存學</span></li>
+      <li><span class="n">03</span><b>小組討論｜劇本情節</b><span>拿著手上的角色，和同桌一起討論一段劇本情節</span></li>
+      <li><span class="n">04</span><b>Q&amp;A｜問教授</b><span>最後開放提問，在一杯酒的距離問胡教授</span></li>
     </ol>
   </div>
 </section>
@@ -311,24 +323,50 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
       <p class="eyebrow">Speaker</p>
       <h2>胡衍南</h2>
       <p class="bio">臺灣師範大學國文學系教授、進修推廣學院院長，清華大學中國文學博士，翰林版高中國文教科書主編。YouTube 與 Podcast 頻道「胡大俠說書」。</p>
-      <p class="books">著有《金瓶梅飲食男女》《蘭陵笑笑生與《金瓶梅》》《金瓶梅到紅樓夢》。這場講座的名字，來自他的《情色時代：《金瓶梅》與明清豔情小說研究》。</p>
+      <p class="books">著有《情色時代：《金瓶梅》與明清豔情小說研究》《金瓶梅飲食男女》《蘭陵笑笑生與《金瓶梅》》《金瓶梅到紅樓夢》。</p>
     </div>
     <img src="assets/speaker-hu-yannan.png" alt="胡衍南教授" width="474" height="473" loading="lazy">
   </div>
 </section>
 
-<section class="band alt" id="tickets">
+<section class="band alt" id="drinks">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Tonight's pour</p>
+      <h2 class="h2">這一晚的酒單</h2>
+      <p class="lede">每張票含兩杯葡萄酒（每杯 60ml），或一杯無酒精特調。不喝酒也一樣有屬於你的那一杯。</p>
+    </div>
+    <div class="trades">
+      <article class="trade">
+        <span class="who" style="color:var(--neon)">氣泡酒・開場</span>
+        <h3>潘金蓮的陷阱</h3>
+        <p class="wine">coo・ma Cava</p>
+      </article>
+      <article class="trade">
+        <span class="who" style="color:var(--canon)">紅酒</span>
+        <h3>西門府裡的溫柔鄉</h3>
+        <p class="wine">Calabria Guiding Star Shiraz</p>
+      </article>
+      <article class="trade">
+        <span class="who">無酒精</span>
+        <h3>一杯金瓶梅</h3>
+        <p class="wine">Drizzle 調製的無酒精特調</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="tickets">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Tickets</p>
-      <h2 class="h2">每一張票都含一杯葡萄酒或無酒精特調</h2>
+      <h2 class="h2">每一張票都含兩杯葡萄酒，或一杯無酒精特調</h2>
     </div>
-    <div class="tickets">
-      <div class="ticket best"><span class="k">單場早鳥・11/22 前</span><span class="price">999<small>元</small></span><span class="d">12/12《金瓶梅》場</span></div>
-      <div class="ticket"><span class="k">單場原價</span><span class="price">1,199<small>元</small></span><span class="d">11/23 起</span></div>
-      <div class="ticket"><span class="k">雙場聯票早鳥</span><span class="price">1,999<small>元</small></span><span class="d">加 12/19 成人 ADHD 場</span></div>
+    <div class="tickets two">
+      <div class="ticket best"><span class="k">早鳥・12/5 前</span><span class="price">999<small>元</small></span><span class="d">12/12《金瓶梅》場</span></div>
+      <div class="ticket"><span class="k">原價</span><span class="price">1,199<small>元</small></span><span class="d">12/6 起</span></div>
     </div>
-    <p class="fine">活動開始前皆可申請取消與退費。提供酒精飲品，限 18 歲以上。</p>
+    <p class="fine">票券售出後不退換、不延用，但可以轉讓給親友：活動前私訊 Instagram 或官方 Line，告知更名即可。提供酒精飲品，限 18 歲以上。</p>
     <div class="signup-row">
       <a class="btn pri" data-signup href="#tickets">前往報名 <span class="arr">→</span></a>
       <span class="note" data-signup-note></span>
@@ -336,31 +374,30 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
   </div>
 </section>
 
-<section class="band" id="faq">
+<section class="band alt" id="faq">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">First time?</p>
       <h2 class="h2">第一次來，你可能會想問</h2>
     </div>
     <div class="faq">
-      <details><summary>完全沒讀過《金瓶梅》可以來嗎？</summary><p class="a">可以，這場就是為沒讀過的人設計的。開場會先用 3 分鐘讓你看懂誰是誰，接下來教授會帶你一起讀。</p></details>
-            <details><summary>一個人來會尷尬嗎？</summary><p class="a">不會。現場以桌為單位，開場後和結尾前各有一段桌邊討論，每個人都帶著一個角色的視角聽故事，同桌自然有話聊。</p></details>
-      <details><summary>這一場喝什麼？</summary><p class="a">每張票含一杯葡萄酒，不喝酒的人可以選 Drizzle 調製的無酒精特調。限 18 歲以上。</p></details>
-      <details><summary>票買了可以退嗎？</summary><p class="a">可以。活動開始前，都可以直接在報名網站申請取消與退費。</p></details>
+      <details><summary>完全沒讀過《金瓶梅》可以來嗎？</summary><p class="a">可以，0 門檻、0 基礎。這場就是為沒讀過的人設計的，教授會帶你一起讀書裡的段落。</p></details>
+      <details><summary>一個人來會尷尬嗎？</summary><p class="a">不會，一個人來也可以。現場以桌為單位，每個人都抽一張人物卡、帶著一個角色的視角聽故事，小組討論時同桌自然有話聊。</p></details>
+      <details><summary>這一場喝什麼？</summary><p class="a">每張票含兩杯葡萄酒（每杯 60ml）：氣泡酒「潘金蓮的陷阱」和紅酒「西門府裡的溫柔鄉」。不喝酒的人可以選無酒精特調「一杯金瓶梅」。限 18 歲以上。</p></details>
+      <details><summary>票買了可以退嗎？</summary><p class="a">票券售出後不退換、也不能延用到其他場次，但可以轉讓給親友。活動前私訊 Instagram 或官方 Line，告訴我們新參加者的名字就完成更名。</p></details>
       <details><summary>地點在哪裡？</summary><p class="a">Drizzle by Fourplay，台北市大安區東豐街 61 號。13:40 開放入場，提早一點到，可以先領一杯酒、找好位子。</p></details>
     </div>
   </div>
 </section>
 
-<section class="band alt" aria-label="下一場">
+<section class="band" aria-label="之後的場次">
   <div class="wrap next">
     <div>
-      <p class="k">下一週・12/19（六）</p>
-      <p class="t">一本被誤會的書之後，換一個被誤會的大腦：成人 ADHD</p>
+      <p class="k">之後的場次</p>
+      <p class="t">下一杯開講什麼，會先在 Instagram 公布</p>
     </div>
     <div class="links">
-      <a class="btn" href="adhd.html">看成人 ADHD 場次介紹 <span class="arr">→</span></a>
-      <a class="btn" href="#tickets">看雙場聯票</a>
+      <a class="btn" href="https://www.instagram.com/lectures_bytheglass/" target="_blank" rel="noopener">追蹤 Instagram <span class="arr">→</span></a>
       <a class="btn" href="index.html#events">回首頁看所有場次</a>
     </div>
   </div>
@@ -369,7 +406,7 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
 <footer>
   <div class="wrap foot">
     <a href="index.html" aria-label="回到學術酒吧首頁"><img class="logo-s" src="assets/logo.png" width="738" height="380" alt="Lectures by the Glass 學術酒吧"></a>
-    <span>學術酒吧 Lectures by the Glass · 把專家請進酒吧，把問題留給你。</span>
+    <span>學術酒吧 Lectures by the Glass · 酒杯空了，腦袋滿的。</span>
     <a href="index.html">← 回首頁</a>
   </div>
   <div class="warning" role="note"><span>禁止酒駕</span><i aria-hidden="true"></i><span>飲酒過量，有害健康</span></div>
@@ -378,8 +415,8 @@ aside.next, .ev, .promise, .trade, .reason, .ticket, .past-card, .social, .scale
 <div class="float"><a class="btn pri" data-signup data-float href="#tickets">報名 12/12</a></div>
 
 <script>
-/* ===== 報名連結：拿到 join1 網址後貼在這裡（首頁 EVENTS 的 url 也要填同一個）===== */
-var SIGNUP_URL = "";
+/* ===== 報名連結：join1（首頁 EVENTS 的 url 也要填同一個）===== */
+var SIGNUP_URL = "https://join1.app/event/NEG0TB";
 
 (function () {
   var btns = document.querySelectorAll("[data-signup]");
